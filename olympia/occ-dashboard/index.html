@@ -12,8 +12,11 @@
 
     <title>Alle Vestigingen</title>
 
-    <!-- Bootstrap core CSS -->
+    <!-- Library css -->
+    <link href="css/css.min.css" rel="stylesheet">
+
     <link href="css/app.css" rel="stylesheet">
+
     <link href="css/prototype.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
@@ -52,10 +55,14 @@
 
     <div class="container">
 
-    	
+    <!-- Title for the page -->
+      <h1 class="space-top-2x">
+        OCC Realtime Dashboard
+      </h1>
+      <hr/>
 
       <!-- Static navbar -->
-      <div class="header clearfix">
+      <div class="header clearfix hide">
         <nav class="space-bottom-2x">
           <ul class="nav nav-pills pull-left">
             <li role="presentation" class="active"><a href="#">Werving</a></li>
@@ -64,282 +71,302 @@
             <li role="presentation"><a href="#">Generiek</a></li>
           </ul>
           <div class="pull-right col-sm-3">
-          	<div class="form-group">
-				<div class="input-group date" id="pickerToUpdate1">
-				<input type="text" class="form-control" required="">  <span class="input-group-addon"><span class="glyphicon-calendar fa"></span></span>
-				</div>
-          	</div>
+          	<!-- <input id="pickerToUpdate1" name="pickerToUpdate1"> -->
           </div>
         </nav>
       </div>
 
       <!-- Main component for a primary marketing message or call to action -->
-      <div class="row">
-      	<div class="col-sm-12 space-bottom-2x">
-	      	<div class="form-group">
-	      		<select class="btn btn-default">
-	      			<option value="0">select</option>
-	      			<option value="1" selected>Alle vestigingen</option>
-	      			<option value="133" label="Amsterdam">Amsterdam</option>
-	      			<option value="143" label="Barendrecht">Barendrecht</option>
-	      			<option value="117" label="Den Bosch">Den Bosch</option>
-	      			<option value="125" label="Groningen">Groningen</option>
-	      		</select>	
-	      	</div>
-	      	<h1> Alle vestigingen</h1>
-      	</div>
-      </div>
+      <!-- Menu item -->
       <div class="row">
       	<div class="col-sm-12">
-      		<h3>Contact na sollicitatie</h3>
-      		<div class="row">
-      			<div class="col-sm-8">
-      				<!-- Table view -->
-      				<table class="table table-striped table-reports table-striped" >
-						<thead>
-						<tr>
-							<th width="7%" class=" align-center">Afgeronde kandidaten</th>
-							<th width="6%">Gecontacteerd</th>
-							<th width="6%">Neit gecontacteered</th>
-						</tr>
-						</thead>
-						<tbody>
-						<tr>
-							<td class="white">120</td>
-							<td>120</td>
-							<td>120</td>
-						</tr>
-						<tr>
-							<td class="white">100%</td>
-							<td>70%</td>
-							<td>30</td>
-						</tr>
-						</tbody>
-					</table>
-					<table class="table table-striped table-reports table-striped" >
-						<thead>
-							<tr>
-								<th width="14%" class=" align-center">Communicatie</th>
-								<th width="6%">1 werkdag</th>
-								<th width="6%">2 werkdagen</th>
-								<th width="6%">3 dagen</th>
-								<th width="6%">Langer</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td class="white">Bellen</td>
-								<td>120</td>
-								<td>120</td>
-								<td>120</td>
-								<td>120</td>
-							</tr>
-							<tr>
-								<td class="white">Mail</td>
-								<td>120</td>
-								<td>120</td>
-								<td>120</td>
-								<td>120</td>
-							</tr>
-							<tr>
-								<td class="white">&nbsp;</td>
-								<td>15%</td>
-								<td>20%</td>
-								<td>120%</td>
-								<td>120%</td>
-							</tr>
-						</tbody>
-					</table>
-      			</div>
-      			<div class="col-sm-4">
-      				<!-- Graph -->
-      				<div id="piechart" style="height:300px"></div>
-      			</div>
-      		</div>
-      		<hr/>
+      		<div class="extended-width border-bottom" data-ng-show="!olympia.showHiddenPage">
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active"><a role="tab" href="#">Werving</a></li>
+              <li role="presentation"><a role="tab" href="#">Communicatie</a></li>
+              <li role="presentation"><a role="tab" href="#">Contact</a></li>
+              <li role="presentation"><a role="tab" href="#">Generiek</a></li>
+            </ul>
+          </div>
       	</div>
       </div>
-      <div class="row">
-      	<div class="col-sm-12">
-      		<h3>Passende sollicitanten uitgenodigd op gesprek</h3>
-      		<div class="row">
-      			<div class="col-sm-8">
-      				<!-- Table view -->
-      				<table class="table table-striped table-reports table-striped" >
-						<thead>
-							<tr>
-								<th width="11%" class=" align-center">Passende afgeronde kandidaten</th>
-								<th width="6%">Gesprek ingepland</th>
-								<th width="6%">Gesprek plaats gevonden</th>
-								<th width="6%">Neit opgevolgd</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td class="white">120</td>
-								<td>120</td>
-								<td>120</td>
-								<td>120</td>
-							</tr>
-							<tr>
-								<td class="white">100%</td>
-								<td>80%</td>
-								<td>20%</td>
-								<td>20%</td>
-							</tr>
-						</tbody>
-					</table>
-      			</div>
-      			<div class="col-sm-4">
-      				<!-- Graph -->
-      				<div id="barchart1"></div>
-      			</div>
-      		</div>
-      		<hr/>
-      	</div>
-      </div>
-      <div class="row">
-      	<div class="col-sm-12">
-      		<h3>Kandidatenprocedure voorstellen bij klant</h3>
-      		<div class="row">
-      			<div class="col-sm-8">
-      				<!-- Table view -->
-      				<table class="table table-striped table-reports table-striped" >
-						<thead>
-							<tr>
-								<th width="11%" class=" align-center">Gesproken kandidaten</th>
-								<th width="6%">Kandidaat voorgesteld bij klant</th>
-								<th width="6%">Sollicitatiegesprek ingepland</th>
-								<th width="6%">Sollicitatiegesprek plaatsgevonden</th>
-								<th width="6%">Niet opgevolgd</th>
-								<th width="6%">Kandidaat geplaatst</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td class="white">120</td>
-								<td>120</td>
-								<td>120</td>
-								<td>120</td>
-								<td>120</td>
-								<td>120</td>
-							</tr>
-							<tr>
-								<td class="white">100%</td>
-								<td>100%</td>
-								<td>80%</td>
-								<td>20%</td>
-								<td>20%</td>
-								<td>20%</td>
-							</tr>
-						</tbody>
-					</table>
-      			</div>
-      			<div class="col-sm-4">
-      				<!-- Graph -->
-      				<div id="barchart2"></div>
-      			</div>
-      		</div>
-      		<hr/>
-      	</div>
-      </div>
-      <div class="row">
-      	<div class="col-sm-12">
-      		<h3>Geplaatste kandidaten</h3>
-      		<div class="row">
-      			<div class="col-sm-8">
-      				<!-- Table view -->
-      				<table class="table table-striped table-reports table-striped" >
-						<thead>
-							<tr>
-								<th width="15%" class=" align-center">Geplaatste kandidaten</th>
-								<th width="6%">Uitzendplaatsingen</th>
-								<th width="6%">Uitzendplaatsingen met uren</th>
-								<th width="6%">W & S plaatsingen</th>
-								<th width="6%">W & S plaatsingen met factuur</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td class="white">120</td>
-								<td>120</td>
-								<td>120</td>
-								<td>60/120</td>
-								<td>60/120</td>
-							</tr>
-							<tr>
-								<td class="white">20%</td>
-								<td>60%</td>
-								<td>50%</td>
-								<td>50%</td>
-								<td>50%</td>
-							</tr>
-						</tbody>
-					</table>
-      			</div>
-      			<div class="col-sm-4">
-      				<!-- Graph -->
-      				
-      			</div>
-      		</div>
-      		<hr/>
-      	</div>
-      </div>
-      <div class="row">
-      	<div class="col-sm-12 space-bottom-2x">
-      		<h3>Geplaatste kandidaten gecontacteerd</h3>
-      		<div class="row">
-      			<div class="col-sm-8">
-      				<!-- Table view -->
-      				<table class="table table-striped table-reports table-striped" >
-						<thead>
-							<tr>
-								<th width="11%" class=" align-center">1e week</th>
-								<th width="6%">1e maand</th>
-								<th width="6%">3 maanden</th>
-								<th width="6%">3 maandelijks contact na 1e 3 maanden</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td class="white">60/120</td>
-								<td>60/120</td>
-								<td>60/120</td>
-								<td>60/120</td>
-							</tr>
-							<tr>
-								<td class="white">20%</td>
-								<td>60%</td>
-								<td>50%</td>
-								<td>50%</td>
-							</tr>
-						</tbody>
-					</table>
-      			</div>
-      			<div class="col-sm-4">
-      				<!-- Graph -->
-      				<div id="barchart3"></div>
-      			</div>
-      		</div>
-      	</div>
-      </div>
-	</div> <!-- /container -->
 
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="tab-content padding top-0x">
+      		<div class="row">
+		      	<div class="col-sm-8">
+			      	<div class="form-group">
+			      		<select class="btn btn-default">
+			      			<option value="0">select</option>
+			      			<option value="1" selected>Alle vestigingen</option>
+			      			<option value="133" label="Amsterdam">Amsterdam</option>
+			      			<option value="133" label="Amsterdam Haarlemmerstraat">Amsterdam Haarlemmerstraat</option>
+			      			<option value="559" label="Barendrecht - Inhouse Greenery">Barendrecht - Inhouse Greenery</option>
+			      			<option value="143" label="Barendrecht">Barendrecht</option>
+			      			<option value="117" label="Den Bosch">Den Bosch</option>
+			      			<option value="125" label="Groningen">Groningen</option>
+			      		</select>	
+			      	</div>
+			      	<!-- <h2> Alle vestigingen</h2> -->
+		      	</div>
+		      	<div class="col-sm-4 text-right">
+		      		<input id="pickerToUpdate1" name="pickerToUpdate1">
+		      	</div>
+		      </div>
+		      <div class="row">
+		      	<div class="col-sm-12">
+		      		<h3>Contact na sollicitatie</h3>
+		      		<div class="row">
+		      			<div class="col-sm-8">
+		      				<!-- Table view -->
+		      				<table class="table table-striped table-reports table-striped" >
+								<thead>
+								<tr>
+									<th width="7%" class=" align-center"><div>Afgeronde kandidaten</div></th>
+									<th width="6%"><div>Gecontacteerd<span class="info popoverData" data-content="Gecontacteerd" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+									<th width="6%"><div>Neit gecontacteered<span class="info popoverData" data-content="Neit gecontacteered" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td class="white">120</td>
+									<td>120</td>
+									<td>120</td>
+								</tr>
+								<tr>
+									<td class="white">100%</td>
+									<td>70%</td>
+									<td>30</td>
+								</tr>
+								</tbody>
+							</table>
+							<table class="table table-striped table-reports table-striped" >
+								<thead>
+									<tr>
+										<th width="14%" class=" align-center">Communicatie</th>
+										<th width="6%"><div>1 werkdag<span class="info popoverData" data-content="1 werkdag" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+										<th width="6%"><div>2 werkdagen<span class="info popoverData" data-content="2 werkdag" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+										<th width="6%"><div>3 dagen<span class="info popoverData" data-content="3 dagen" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+										<th width="6%"><div>Langer<span class="info popoverData" data-content="Langer" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="white">Bellen</td>
+										<td>120</td>
+										<td>120</td>
+										<td>120</td>
+										<td>120</td>
+									</tr>
+									<tr>
+										<td class="white">Mail</td>
+										<td>120</td>
+										<td>120</td>
+										<td>120</td>
+										<td>120</td>
+									</tr>
+									<tr>
+										<td class="white">&nbsp;</td>
+										<td>15%</td>
+										<td>20%</td>
+										<td>120%</td>
+										<td>120%</td>
+									</tr>
+								</tbody>
+							</table>
+		      			</div>
+		      			<div class="col-sm-4">
+		      				<!-- Graph -->
+		      				<div id="piechart" style="height:300px"></div>
+		      			</div>
+		      		</div>
+		      		<hr/>
+		      	</div>
+		      </div>
+		      <div class="row">
+		      	<div class="col-sm-12">
+		      		<h3>Passende sollicitanten uitgenodigd op gesprek</h3>
+		      		<div class="row">
+		      			<div class="col-sm-8">
+		      				<!-- Table view -->
+		      				<table class="table table-striped table-reports table-striped" >
+								<thead>
+									<tr>
+										<th width="11%" class=" align-center">Passende afgeronde kandidaten</th>
+										<th width="6%"><div>Gesprek ingepland<span class="info popoverData" data-content="Gesprek ingepland" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+										<th width="6%"><div>Gesprek plaats gevonden<span class="info popoverData" data-content="Gesprek plaats gevonden" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+										<th width="6%"><div>Neit opgevolgd<span class="info popoverData" data-content="Neit opgevolgd" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="white">120</td>
+										<td>120</td>
+										<td>120</td>
+										<td>120</td>
+									</tr>
+									<tr>
+										<td class="white">100%</td>
+										<td>80%</td>
+										<td>20%</td>
+										<td>20%</td>
+									</tr>
+								</tbody>
+							</table>
+		      			</div>
+		      			<div class="col-sm-4">
+		      				<!-- Graph -->
+		      				<div id="barchart1"></div>
+		      			</div>
+		      		</div>
+		      		<hr/>
+		      	</div>
+		      </div>
+		      <div class="row">
+		      	<div class="col-sm-12">
+		      		<h3>Kandidatenprocedure voorstellen bij klant</h3>
+		      		<div class="row">
+		      			<div class="col-sm-8">
+		      				<!-- Table view -->
+		      				<table class="table table-striped table-reports table-striped" >
+								<thead>
+									<tr>
+										<th width="11%" class=" align-center">Gesproken kandidaten</th>
+										<th width="6%"><div>Kandidaat voorgesteld bij klant<span class="info popoverData" data-content="Kandidaat voorgesteld bij klant" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+										<th width="6%"><div>Sollicitatiegesprek ingepland<span class="info popoverData" data-content="Sollicitatiegesprek ingepland" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+										<th width="6%"><div>Sollicitatiegesprek plaatsgevonden<span class="info popoverData" data-content="Sollicitatiegesprek plaatsgevonden" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+										<th width="6%"><div>Niet opgevolgd<span class="info popoverData" data-content="Niet opgevolgd" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+										<th width="6%"><div>Kandidaat geplaatst<span class="info popoverData" data-content="Kandidaat geplaatst" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="white">120</td>
+										<td>120</td>
+										<td>120</td>
+										<td>120</td>
+										<td>120</td>
+										<td>120</td>
+									</tr>
+									<tr>
+										<td class="white">100%</td>
+										<td>100%</td>
+										<td>80%</td>
+										<td>20%</td>
+										<td>20%</td>
+										<td>20%</td>
+									</tr>
+								</tbody>
+							</table>
+		      			</div>
+		      			<div class="col-sm-4">
+		      				<!-- Graph -->
+		      				<div id="barchart2"></div>
+		      			</div>
+		      		</div>
+		      		<hr/>
+		      	</div>
+		      </div>
+		      <div class="row">
+		      	<div class="col-sm-12">
+		      		<h3>Geplaatste kandidaten</h3>
+		      		<div class="row">
+		      			<div class="col-sm-8">
+		      				<!-- Table view -->
+		      				<table class="table table-striped table-reports table-striped" >
+								<thead>
+									<tr>
+										<th width="15%" class=" align-center">Geplaatste kandidaten</th>
+										<th width="6%"><div>Uitzendplaatsingen<span class="info popoverData" data-content="Uitzendplaatsingen" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+										<th width="6%"><div>Uitzendplaatsingen met uren<span class="info popoverData" data-content="Uitzendplaatsingen met uren" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+										<th width="6%"><div>W & S plaatsingen<span class="info popoverData" data-content="W & S plaatsingen" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+										<th width="6%"><div>W & S plaatsingen met factuur<span class="info popoverData" data-content="W & S plaatsingen met factuur" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="white">120</td>
+										<td>120</td>
+										<td>120</td>
+										<td>60/120</td>
+										<td>60/120</td>
+									</tr>
+									<tr>
+										<td class="white">20%</td>
+										<td>60%</td>
+										<td>50%</td>
+										<td>50%</td>
+										<td>50%</td>
+									</tr>
+								</tbody>
+							</table>
+		      			</div>
+		      			<div class="col-sm-4">
+		      				<!-- Graph -->
+		      				
+		      			</div>
+		      		</div>
+		      		<hr/>
+		      	</div>
+		      </div>
+		      <div class="row">
+		      	<div class="col-sm-12 space-bottom-2x">
+		      		<h3>Geplaatste kandidaten gecontacteerd</h3>
+		      		<div class="row">
+		      			<div class="col-sm-8">
+		      				<!-- Table view -->
+		      				<table class="table table-striped table-reports table-striped" >
+								<thead>
+									<tr>
+										<th width="11%" class=" align-center">1e week</th>
+										<th width="6%"><div>1e maand<span class="info popoverData" data-content="1e maand" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+										<th width="6%"><div>3 maanden<span class="info popoverData" data-content="3 maanden" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+										<th width="6%"><div>3 maandelijks contact na 1e 3 maanden<span class="info popoverData" data-content="3 maandelijks contact na 1e 3 maanden" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="white">60/120</td>
+										<td>60/120</td>
+										<td>60/120</td>
+										<td>60/120</td>
+									</tr>
+									<tr>
+										<td class="white">20%</td>
+										<td>60%</td>
+										<td>50%</td>
+										<td>50%</td>
+									</tr>
+								</tbody>
+							</table>
+		      			</div>
+		      			<div class="col-sm-4">
+		      				<!-- Graph -->
+		      				<div id="barchart3"></div>
+		      			</div>
+		      		</div>
+		      	</div>
+		      </div>
+      </div>
 
-	<!-- footer -->
+    </div> <!-- /container -->
+
+    <!-- footer -->
 	<footer class="brand-ignite" id="main-footer" style="visibility: visible;">
       <div class="powered-Cont">&nbsp;
       </div>
     </footer>
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="js/moment.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap-datetimepicker.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/jquery.comiseo.daterangepicker.js"></script>
     <script src="js/mockup.js"></script>
   </body>
 </html>
