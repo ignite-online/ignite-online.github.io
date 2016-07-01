@@ -5,3 +5,6 @@ table.table-reports tr th, table.table-reports tr td{
 table.table-reports tr th:first-child{
 	font-size:1.1em;
 }
+.piechartEqualizer{
+	height:200px;
+}

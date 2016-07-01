@@ -15,21 +15,41 @@
 	prototypeApp.prototype.drawPieChart = function(){
 		var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
-          ['Work',     7],
-          ['Eat',      4],
+          ['Gecontacteerd',     7],
+          ['Neit gecontacteered',      3],
         ]);
 
         var options = {
           //title: 'My Daily Activities'
-          chartArea : {top:'10', width:'100%'},
+          chartArea : {top:'10', width:'75%', height:'75%'},
           legend : {position:'none'},
-          tooltip: { trigger: 'none' },
-          height:'350px',
-          width:'350px',
-          colors: ['#ff6412', '#171580']
+          height:'100%',
+          width:'100%',
+          colors: ['#009a2d', '#dd4b39']
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+	}
+	prototypeApp.prototype.drawPieChart1 = function(){
+		var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['binnen 1 werkdag', 4],
+          ['binnen 2 werkdagen', 3],
+          ['binnen 3 werkdagen', 3]
+        ]);
+
+        var options = {
+          //title: 'My Daily Activities'
+          chartArea : {top:'10', width:'75%', height:'75%'},
+          legend : {position:'none'},
+          height:'100%',
+          width:'100%',
+          colors: ['#009a2d', '#fda100','#dd4b39']
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
 
         chart.draw(data, options);
 	}
@@ -183,6 +203,7 @@
 		var app = new prototypeApp();
 
 		app.chartCallBack(app.drawPieChart);
+		app.chartCallBack(app.drawPieChart1);
 		app.chartCallBack(app.drawStackedBarChart1);
 		app.chartCallBack(app.drawStackedBarChart2);
 		app.chartCallBack(app.drawStackedBarChart3);
