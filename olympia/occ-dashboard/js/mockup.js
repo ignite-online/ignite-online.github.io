@@ -165,14 +165,6 @@
                 dateEnd: function () {
                     return moment().subtract(1, 'months').endOf('month')
                 }
-            }, {
-                text: 'Sinds 1e publicatie',
-                dateStart: function () {
-                    return moment(jobStart, "MMDDYYYY")
-                },
-                dateEnd: function () {
-                    return moment(jobEnd, "MMDDYYYY")
-                }
             }],
             applyButtonText: "Toepassen",
             applyOnMenuSelect: false
