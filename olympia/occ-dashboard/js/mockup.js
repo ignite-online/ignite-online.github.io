@@ -134,34 +134,26 @@
 
         chart.draw(data, options);
 	}
-	prototypeApp.prototype.drawStackedBarChart3 = function(){
+	prototypeApp.prototype.drawPieChart6 = function(){
 		var data = google.visualization.arrayToDataTable([
-	        [' ', 'Value', 'Value in %'],
-	        ['1e week', 8175000, 8008000],
-	        ['1e maand', 3792000, 3694000],
-	        ['3 maanden', 2695000, 2896000],
-	        ['3 maandelijks', 2099000, 1953000]
-	      ]);
+          ['Task', 'Hours per Day'],
+          ['contactmoment na 1e maand', 6],
+          ['contactmoment na 3e maand', 5],
+          ['3 maandelijks contact na 1e 3 maanden', 5],
+        ]);
 
-		var options = {
-			chart: {
-			//title: 'Population of Largest U.S. Cities'
-			},
-			hAxis: {
-				title: 'Total Population',
-				titlePosition : 'none',
-				minValue: 0,
-			},
-			vAxis: {
-				title: 'City'
-			},
-			bars: 'horizontal',
-			legend : {position:'none'},
-			colors: ['#ff6412', '#171580']
-		};
+        var options = {
+          //title: 'My Daily Activities'
+          chartArea : {top:'10', width:'75%', height:'75%'},
+          legend : {position:'none'},
+          height:'100%',
+          width:'100%',
+          colors: ['#009a2d', '#fda100','#dd4b39']
+        };
 
-		var chart3 = new google.charts.Bar(document.getElementById('barchart3'));
-		chart3.draw(data, options);
+        var chart = new google.visualization.PieChart(document.getElementById('piechart6'));
+
+        chart.draw(data, options);
 	}
 	prototypeApp.prototype.initializeDateRange = function(ele){
 		$(ele).daterangepicker({
@@ -208,7 +200,8 @@
                 }
             }],
             applyButtonText: "Toepassen",
-            applyOnMenuSelect: false
+            applyOnMenuSelect: false,
+            widget : function(event, data){console.log(event, data);}
         });
 	}
 	prototypeApp.prototype.initializePopover = function(ele){
@@ -229,7 +222,7 @@
 		app.chartCallBack(app.drawPieChart3);
 		app.chartCallBack(app.drawPieChart4);
 		app.chartCallBack(app.drawPieChart5);
-		app.chartCallBack(app.drawStackedBarChart3);
+		app.chartCallBack(app.drawPieChart6);
 		app.initializeDateRange('#pickerToUpdate1');
 		app.initializePopover('.popoverData');
 	}
