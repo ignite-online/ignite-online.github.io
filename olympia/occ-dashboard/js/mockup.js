@@ -53,65 +53,86 @@
 
         chart.draw(data, options);
 	}
-	prototypeApp.prototype.drawStackedBarChart1 = function(){
+	prototypeApp.prototype.drawPieChart2 = function(){
 		var data = google.visualization.arrayToDataTable([
-	        [' ', 'Value', 'Value in %'],
-	        ['Passende afgeronde kandidaten', 8175000, 8008000],
-	        ['Gesprek ingepland', 3792000, 3694000],
-	        ['Gesprek plaats gevonden', 2695000, 2896000],
-	        ['Neit opgevolgd', 2099000, 1953000]
-	      ]);
+          ['Task', 'Hours per Day'],
+          ['Pool-/intakegesprek gepland', 8],
+          ['Pool-/intakegesprek plaatsgevonden', 2],
+        ]);
 
-		var options = {
-			chart: {
-			//title: 'Population of Largest U.S. Cities'
-			},
-			hAxis: {
-				title: 'Total Population',
-				titlePosition : 'none',
-				minValue: 0,
-			},
-			vAxis: {
-				title: 'City'
-			},
-			bars: 'horizontal',
-			legend : {position:'none'},
-			colors: ['#ff6412', '#171580']
-		};
+        var options = {
+          //title: 'My Daily Activities'
+          chartArea : {top:'10', width:'75%', height:'75%'},
+          legend : {position:'none'},
+          height:'100%',
+          width:'100%',
+          colors: ['#009a2d', '#dd4b39']
+        };
 
-		var chart1 = new google.charts.Bar(document.getElementById('barchart1'));
-		chart1.draw(data, options);
+        var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+
+        chart.draw(data, options);
 	}
-	prototypeApp.prototype.drawStackedBarChart2 = function(){
+	prototypeApp.prototype.drawPieChart3 = function(){
 		var data = google.visualization.arrayToDataTable([
-	        [' ', 'Value', 'Value in %'],
-	        ['Gesproken kandidaten', 8175000, 8008000],
-	        ['Kandidaat voorgesteld bij klant', 3792000, 3694000],
-	        ['Sollicitatiegesprek ingepland', 2695000, 2896000],
-	        ['Sollicitatiegesprek plaatsgevonden', 2099000, 1953000],
-	        ['Niet opgevolgd', 2099000, 1953000],
-	        ['Kandidaat geplaatst', 2099000, 1953000]
-	      ]);
+          ['Task', 'Hours per Day'],
+          ['% geplaatst', 2],
+          ['% afgewezen', 6],
+          ['% niet opgevolgd', 2]
+        ]);
 
-		var options = {
-			chart: {
-			//title: 'Population of Largest U.S. Cities'
-			},
-			hAxis: {
-				title: 'Total Population',
-				titlePosition : 'none',
-				minValue: 0,
-			},
-			vAxis: {
-				title: 'City'
-			},
-			bars: 'horizontal',
-			legend : {position:'none'},
-			colors: ['#ff6412', '#171580']
-		};
+        var options = {
+          //title: 'My Daily Activities'
+          chartArea : {top:'10', width:'75%', height:'75%'},
+          legend : {position:'none'},
+          height:'100%',
+          width:'100%',
+          colors: ['#009a2d', '#fda100','#dd4b39']
+        };
 
-		var chart2 = new google.charts.Bar(document.getElementById('barchart2'));
-		chart2.draw(data, options);
+        var chart = new google.visualization.PieChart(document.getElementById('piechart3'));
+
+        chart.draw(data, options);
+	}
+	prototypeApp.prototype.drawPieChart4 = function(){
+		var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['OCC uitzendplaatsingen met uren', 5],
+          ['OCC W&S plaatsingen met factuur', 5],
+        ]);
+
+        var options = {
+          //title: 'My Daily Activities'
+          chartArea : {top:'10', width:'75%', height:'75%'},
+          legend : {position:'none'},
+          height:'100%',
+          width:'100%',
+          colors: ['#009a2d', '#dd4b39']
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart4'));
+
+        chart.draw(data, options);
+	}
+	prototypeApp.prototype.drawPieChart5 = function(){
+		var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['0-39 ‘niet passend', 2],
+          ['40-75 ‘passend’', 6],
+        ]);
+
+        var options = {
+          //title: 'My Daily Activities'
+          chartArea : {top:'10', width:'75%', height:'75%'},
+          legend : {position:'none'},
+          height:'100%',
+          width:'100%',
+          colors: ['#009a2d', '#dd4b39']
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart5'));
+
+        chart.draw(data, options);
 	}
 	prototypeApp.prototype.drawStackedBarChart3 = function(){
 		var data = google.visualization.arrayToDataTable([
@@ -204,8 +225,10 @@
 
 		app.chartCallBack(app.drawPieChart);
 		app.chartCallBack(app.drawPieChart1);
-		app.chartCallBack(app.drawStackedBarChart1);
-		app.chartCallBack(app.drawStackedBarChart2);
+		app.chartCallBack(app.drawPieChart2);
+		app.chartCallBack(app.drawPieChart3);
+		app.chartCallBack(app.drawPieChart4);
+		app.chartCallBack(app.drawPieChart5);
 		app.chartCallBack(app.drawStackedBarChart3);
 		app.initializeDateRange('#pickerToUpdate1');
 		app.initializePopover('.popoverData');
