@@ -17,10 +17,9 @@
 
 	<link href="css/app.css" rel="stylesheet">
 
-	<link href="css/prototype.css" rel="stylesheet">
+	<link href="css/select2.min.css" rel="stylesheet">
 
-	<!-- Custom styles for this template -->
-	<link href="navbar.css" rel="stylesheet">
+	<link href="css/prototype.css" rel="stylesheet">
 
 	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 	<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -57,7 +56,7 @@
 
 		<!-- Title for the page -->
 		<h1 class="space-top-2x">
-			OCC Prestatiedashboard (vacature-sollicitanten)
+			OCC Dashboard (vacature-sollicitanten)
 		</h1>
 		<hr/>
 
@@ -82,8 +81,8 @@
 			<div class="col-sm-12">
 				<div class="extended-width border-bottom">
 					<ul class="nav nav-tabs" role="tablist">
-						<li role="presentation" class="active"><a role="tab" href="#plaatsingen" aria-controls="plaatsingen" role="tab" data-toggle="tab">OCC Plaatsingen</a></li>
-						<li role="presentation"><a role="tab" href="#generiek" aria-controls="generiek" role="tab" data-toggle="tab">Generiek</a></li>
+						<li role="presentation" class="active"><a role="tab" href="#plaatsingen" aria-controls="plaatsingen" role="tab" data-toggle="tab">OCC Opvolging</a></li>
+						<li role="presentation"><a role="tab" href="#generiek" aria-controls="generiek" role="tab" data-toggle="tab">OCC Kengetallen</a></li>
 					</ul>
 				</div>
 			</div>
@@ -95,8 +94,18 @@
 				<div class="row">
 					<div class="col-sm-7">
 						<div class="form-group">
-							<select class="btn btn-default">
+							<!-- <select class="btn btn-default">
 								<option value="0">select</option>
+								<option value="1" selected>Alle vestigingen</option>
+								<option value="133" label="Amsterdam">Amsterdam</option>
+								<option value="133" label="Amsterdam Haarlemmerstraat">Amsterdam Haarlemmerstraat</option>
+								<option value="559" label="Barendrecht - Inhouse Greenery">Barendrecht - Inhouse Greenery</option>
+								<option value="143" label="Barendrecht">Barendrecht</option>
+								<option value="117" label="Den Bosch">Den Bosch</option>
+								<option value="125" label="Groningen">Groningen</option>
+							</select> -->
+
+							<select class="btn btn-default multiSelectOption" multiple="multiple">
 								<option value="1" selected>Alle vestigingen</option>
 								<option value="133" label="Amsterdam">Amsterdam</option>
 								<option value="133" label="Amsterdam Haarlemmerstraat">Amsterdam Haarlemmerstraat</option>
@@ -137,7 +146,7 @@
 											<tr>
 												<td class="white">100% (83%/17%)</td>
 												<td>70%</td>
-												<td>30</td>
+												<td>30%</td>
 											</tr>
 										</tbody>
 									</table>
@@ -149,14 +158,12 @@
 												<th class=" align-center font-size-normal"><div>Contactvorm<span class="info popoverData" data-content="Communicatie" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
 												<th ><div>Binnen 1 werkdag<span class="info popoverData" data-content="binnen 1 werkdag" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
 												<th ><div>Binnen 2 werkdagen<span class="info popoverData" data-content="binnen 2 werkdagen" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
-												<th ><div>Binnen 3 werkdagen<span class="info popoverData" data-content="binnen 3 werkdagen" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
-												<th ><div>Langer dan 3 werkdagen<span class="info popoverData" data-content="langer dan 3 werkdagen" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+												<th ><div>Langer dan 2 werkdagen<span class="info popoverData" data-content="langer dan 3 werkdagen" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
 											</tr>
 										</thead>
 										<tbody>
 											<tr>
 												<td class="white">Gebeld én gesproken</td>
-												<td>120</td>
 												<td>120</td>
 												<td>120</td>
 												<td>120</td>
@@ -166,13 +173,11 @@
 												<td>120</td>
 												<td>120</td>
 												<td>120</td>
-												<td>120</td>
 											</tr>
 											<tr>
 												<td class="white">&nbsp;</td>
 												<td>15%</td>
 												<td>20%</td>
-												<td>120%</td>
 												<td>120%</td>
 											</tr>
 										</tbody>
@@ -190,7 +195,7 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-12">
-						<h3>Passende (overall matchingscore) kandidaten uitgenodigd op OCC pool-/selectiegesprek</h3>
+						<h3>Passende (overall matchingscore) kandidaten op OCC pool-/selectiegesprek</h3>
 						<div class="row">
 							<div class="col-sm-8">
 								<!-- Table view -->
@@ -198,9 +203,8 @@
 									<thead>
 										<tr>
 											<th class=" align-center font-size-normal"><div>Passende kandidaten<span class="info popoverData" data-content="Passende kandidaten" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
-											<th ><div>Pool-/intakegesprek gepland<span class="info popoverData" data-content="Pool-/intakegesprek gepland" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
 											<th ><div>Pool-/intakegesprek plaatsgevonden<span class="info popoverData" data-content="Pool-/intakegesprek plaatsgevonden" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
-											<th ><div>Niet opgevolgd<span class="info popoverData" data-content="Niet opgevolgd" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+											<th ><div>Geenverdereopvolging<span class="info popoverData" data-content="Geenverdereopvolging" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
 										</tr>
 									</thead>
 									<tbody>
@@ -208,11 +212,9 @@
 											<td class="white">120</td>
 											<td>120</td>
 											<td>120</td>
-											<td>120</td>
 										</tr>
 										<tr>
 											<td class="white">100%</td>
-											<td>80%</td>
 											<td>20%</td>
 											<td>20%</td>
 										</tr>
@@ -229,7 +231,7 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-12">
-						<h3>Kandidatenprocedure voorstellen bij klant</h3>
+						<h3>Kandidaten voorstellen bij klant</h3>
 						<div class="row">
 							<div class="col-sm-8">
 								<!-- Table view -->
@@ -240,8 +242,8 @@
 											<th ><div>Kandidaten voorgesteld bij klant<span class="info popoverData" data-content="Kandidaten voorgesteld bij klant" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
 											<th ><div>Sollicitatiegesprekken ingepland bij klant<span class="info popoverData" data-content="Sollicitatiegesprekken ingepland bij klant" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
 											<th ><div>Sollicitatiegesprekken plaatsgevonden bij klant<span class="info popoverData" data-content="Sollicitatiegesprekken plaatsgevonden bij klant" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+											<th ><div>Kandidaten niet geplaatst<span class="info popoverData" data-content="Kandidaat geplaatst" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
 											<th ><div>Kandidaten Pool-/intakegesprek plaatsgevondenniet opgevolgd<span class="info popoverData" data-content="Kandidaten Pool-/intakegesprek plaatsgevondenniet opgevolgd" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
-											<th ><div>Kandidaat geplaatst<span class="info popoverData" data-content="Kandidaat geplaatst" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
 										</tr>
 									</thead>
 									<tbody>
@@ -255,7 +257,7 @@
 										</tr>
 										<tr>
 											<td class="white">100%</td>
-											<td>100% (15%)</td>
+											<td>100%</td>
 											<td>80% (15%)</td>
 											<td>20% (15%)</td>
 											<td>20% (15%)</td>
@@ -264,9 +266,15 @@
 									</tbody>
 								</table>
 							</div>
-							<div class="col-sm-4">
+							<div class="col-sm-2">
+								<!-- <h5>Gesproken kandidaten geplaatst</h5> -->
 								<!-- Graph -->
 								<div id="piechart3"></div>
+							</div>
+							<div class="col-sm-2">
+								 <!-- <h5>Voorgestelde kandidaten geplaatst</h4> -->
+								<!-- Graph -->
+								<div id="piechart7"></div>
 							</div>
 						</div>
 						<hr/>
@@ -282,10 +290,10 @@
 									<thead>
 										<tr>
 											<th class=" align-center font-size-normal"><div>Geplaatste OCC kandidaten<span class="info popoverData" data-content="Geplaatste OCC kandidaten" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
-											<th ><div>Uitzendplaatsingen<span class="info popoverData" data-content="Uitzendplaatsingen" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
-											<th ><div>Uitzendplaatsingen met uren<span class="info popoverData" data-content="Uitzendplaatsingen met uren" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
-											<th ><div>W & S plaatsingen<span class="info popoverData" data-content="W & S plaatsingen" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
-											<th ><div>W & S plaatsingen met factuur<span class="info popoverData" data-content="W & S plaatsingen met factuur" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+											<th ><div>Uitzendplaatsingen aangemaakt<span class="info popoverData" data-content="Uitzendplaatsingen aangemaakt" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+											<th ><div>Uitzendplaatsingen met urenbriefje<span class="info popoverData" data-content="Uitzendplaatsingen met uren" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+											<th ><div>W&S plaatsingen aangemaakt<span class="info popoverData" data-content="W & S plaatsingen" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+											<th ><div>W&S plaatsingengefactureerd<span class="info popoverData" data-content="W & S plaatsingen met factuur" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
 										</tr>
 									</thead>
 									<tbody>
@@ -449,6 +457,7 @@
 	<script src="js/jquery-ui.js"></script>
 	<script src="js/moment.min.js"></script>
 	<script src="js/jquery.comiseo.daterangepicker.js"></script>
+	<script src="js/select2.full.min.js"></script>
 	<script src="js/mockup.js"></script>
 </body>
 </html>

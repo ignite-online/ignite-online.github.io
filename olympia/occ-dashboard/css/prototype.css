@@ -8,3 +8,10 @@ table.table-reports tr th:first-child{
 .piechartEqualizer{
 	height:200px;
 }
+
+/*Select2 css*/
+.select2-container .select2-selection--multiple{
+	min-height:33px;
+	max-height:100px;
+	overflow-y:	auto; 
+}

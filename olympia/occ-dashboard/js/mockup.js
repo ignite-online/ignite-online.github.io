@@ -16,7 +16,7 @@
 		var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
           ['Gecontacteerd',     7],
-          ['Neit gecontacteered',      3],
+          ['Niet gecontacteered',      3],
         ]);
 
         var options = {
@@ -36,8 +36,7 @@
 		var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
           ['binnen 1 werkdag', 4],
-          ['binnen 2 werkdagen', 3],
-          ['binnen 3 werkdagen', 3]
+          ['binnen 2 werkdagen', 3]
         ]);
 
         var options = {
@@ -46,7 +45,7 @@
           legend : {position:'none'},
           height:'100%',
           width:'100%',
-          colors: ['#009a2d', '#fda100','#dd4b39']
+          colors: ['#009a2d', '#dd4b39']
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
@@ -56,8 +55,8 @@
 	prototypeApp.prototype.drawPieChart2 = function(){
 		var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
-          ['Pool-/intakegesprek gepland', 8],
           ['Pool-/intakegesprek plaatsgevonden', 2],
+          ['Geenverdereopvolging', 2],
         ]);
 
         var options = {
@@ -76,18 +75,20 @@
 	prototypeApp.prototype.drawPieChart3 = function(){
 		var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
-          ['% geplaatst', 2],
-          ['% afgewezen', 6],
-          ['% niet opgevolgd', 2]
+          ['Kandidaten geplaatst', 4],
+          ['Kandidaten niet geplaatst', 6],
         ]);
 
         var options = {
-          //title: 'My Daily Activities'
-          chartArea : {top:'10', width:'75%', height:'75%'},
+          title: 'Gesproken kandidaten geplaatst',
+          titleTextStyle : {
+            fontSize : 12,
+          },
+          chartArea : {top:'20', width:'80%', height:'100%'},
           legend : {position:'none'},
           height:'100%',
           width:'100%',
-          colors: ['#009a2d', '#fda100','#dd4b39']
+          colors: ['#009a2d', '#dd4b39']
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart3'));
@@ -155,6 +156,29 @@
 
         chart.draw(data, options);
 	}
+  prototypeApp.prototype.drawPieChart7 = function(){
+    var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Kandidaten geplaatst', 8],
+          ['Kandidaten niet geplaatst', 6],
+        ]);
+
+        var options = {
+          title: 'Voorgestelde kandidaten geplaatst',
+          titleTextStyle : {
+            fontSize : 12,
+          },
+          chartArea : {top:'20', width:'80%', height:'100%'},
+          legend : {position:'none'},
+          height:'100%',
+          width:'100%',
+          colors: ['#009a2d', '#dd4b39']
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart7'));
+
+        chart.draw(data, options);
+  }
 	prototypeApp.prototype.initializeDateRange = function(ele){
 		$(ele).daterangepicker({
             initialText: 'Selecteer periode',
@@ -208,7 +232,12 @@
 	    $(ele).popover({
 	    	html: true
 	    });
-	};
+	}
+  prototypeApp.prototype.initializeSelect2 = function(ele){
+      $(ele).select2({
+        placeholder: "Select a option"
+      });
+  }
 
 	//Init
 	init();
@@ -223,8 +252,11 @@
 		app.chartCallBack(app.drawPieChart4);
 		app.chartCallBack(app.drawPieChart5);
 		app.chartCallBack(app.drawPieChart6);
+    app.chartCallBack(app.drawPieChart7);
 		app.initializeDateRange('#pickerToUpdate1');
 		app.initializePopover('.popoverData');
+
+    app.initializeSelect2('.multiSelectOption');
 	}
 	
 })(window);
