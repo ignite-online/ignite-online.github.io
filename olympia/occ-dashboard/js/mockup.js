@@ -95,26 +95,6 @@
 
         chart.draw(data, options);
 	}
-	prototypeApp.prototype.drawPieChart4 = function(){
-		var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['OCC uitzendplaatsingen met uren', 5],
-          ['OCC W&S plaatsingen met factuur', 5],
-        ]);
-
-        var options = {
-          //title: 'My Daily Activities'
-          chartArea : {top:'10', width:'75%', height:'75%'},
-          legend : {position:'none'},
-          height:'100%',
-          width:'100%',
-          colors: ['#009a2d', '#dd4b39']
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart4'));
-
-        chart.draw(data, options);
-	}
 	prototypeApp.prototype.drawPieChart5 = function(){
 		var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
@@ -178,6 +158,27 @@
         var chart = new google.visualization.PieChart(document.getElementById('piechart7'));
 
         chart.draw(data, options);
+  }
+  prototypeApp.prototype.stackedBarChart = function(){
+    var data = google.visualization.arrayToDataTable([
+        ['year', 'Uitzendplaatsingen met urenbriefje', 'Uitzendplaatsingen aangemaakt',  
+        'W&S plaatsingen aangemaakt', 'Geplaatste OCC kandidaten', 'W&S plaatsingengefactureerd',
+         { role: 'annotation' } ],
+        ['2010', 10, 24, 20, 32, 18, ''],
+        ['2020', 16, 22, 23, 30, 16,''],
+        ['2030', 28, 19, 29, 30, 12,'']
+      ]);
+
+      var options = {
+        width:'100%',
+        height: '100%',
+        legend: { position: 'top', maxLines: 3 },
+        bar: { groupWidth: '75%' },
+        isStacked: true,
+        colors: ["#171580", "#009a2d",  "#fda100", "#dd4b39",  "#cccccc",]
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById('stackedChart'));
+      chart.draw(data, options);
   }
 	prototypeApp.prototype.initializeDateRange = function(ele){
 		$(ele).daterangepicker({
@@ -249,10 +250,10 @@
 		app.chartCallBack(app.drawPieChart1);
 		app.chartCallBack(app.drawPieChart2);
 		app.chartCallBack(app.drawPieChart3);
-		app.chartCallBack(app.drawPieChart4);
 		app.chartCallBack(app.drawPieChart5);
 		app.chartCallBack(app.drawPieChart6);
     app.chartCallBack(app.drawPieChart7);
+    app.chartCallBack(app.stackedBarChart);
 		app.initializeDateRange('#pickerToUpdate1');
 		app.initializePopover('.popoverData');
 
