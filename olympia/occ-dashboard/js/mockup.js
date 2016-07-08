@@ -140,12 +140,9 @@
   }
   prototypeApp.prototype.stackedBarChart = function(){
     var data = google.visualization.arrayToDataTable([
-        ['year', 'Uitzendplaatsingen met urenbriefje', 'Uitzendplaatsingen aangemaakt',  
-        'W&S plaatsingen aangemaakt', 'Geplaatste OCC kandidaten', 'W&S plaatsingengefactureerd',
+        ['year', 'Uitzendplaatsingen met urenbriefje', 'W&S plaatsingengefactureerd',
          { role: 'annotation' } ],
-        ['2010', 10, 24, 20, 32, 18, ''],
-        ['2020', 16, 22, 23, 30, 16,''],
-        ['2030', 28, 19, 29, 30, 12,'']
+        ['2015', 10, 18, ''],
       ]);
 
       var options = {
@@ -154,19 +151,19 @@
         legend: { position: 'top', maxLines: 3 },
         bar: { groupWidth: '75%' },
         isStacked: true,
-        colors: ["#171580", "#009a2d",  "#fda100", "#dd4b39",  "#cccccc",]
+        colors: ["#171580", "#cccccc",]
       };
       var chart = new google.visualization.ColumnChart(document.getElementById('stackedChart'));
       chart.draw(data, options);
   }
   prototypeApp.prototype.stackedBarChart1 = function(){
     var data = google.visualization.arrayToDataTable([
-        ['year', '1e Wk', '1e Mnd',  
-        '3e Mnd', '>6Mnd',
+        ['time', 'green', 'red',
          { role: 'annotation' } ],
-        ['2010', 10, 24, 20, 32,''],
-        ['2020', 16, 22, 23, 30,''],
-        ['2030', 28, 19, 29, 30,'']
+        ['1e Wk', 10, 24,''],
+        ['1e Mnd', 16, 22,''],
+        ['3e Mnd', 28, 19,''],
+        ['>6Mnd', 28, 19,'']
       ]);
 
       var options = {
