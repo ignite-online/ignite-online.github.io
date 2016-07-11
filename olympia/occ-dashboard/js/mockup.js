@@ -142,7 +142,7 @@
     var data = google.visualization.arrayToDataTable([
         ['year', 'Uitzendplaatsingen met urenbriefje', 'W&S plaatsingengefactureerd',
          { role: 'annotation' } ],
-        ['2015', 10, 18, ''],
+        ['Plaatsingen', 10, 18, ''],
       ]);
 
       var options = {
@@ -233,7 +233,8 @@
 	}
   prototypeApp.prototype.initializeSelect2 = function(ele){
       $(ele).select2({
-        placeholder: "Select a option"
+        placeholder: "Select a option",
+        width:'253'
       });
   }
 
@@ -251,7 +252,7 @@
     app.chartCallBack(app.drawPieChart7);
     app.chartCallBack(app.stackedBarChart);
     app.chartCallBack(app.stackedBarChart1);
-		app.initializeDateRange('#pickerToUpdate1');
+		app.initializeDateRange('.calenderRange');
 		app.initializePopover('.popoverData');
 
     app.initializeSelect2('.multiSelectOption');
