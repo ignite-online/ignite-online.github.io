@@ -36,7 +36,8 @@
 		var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
           ['binnen 1 werkdag', 4],
-          ['binnen 2 werkdagen', 3]
+          ['Binnen 2 werkdagen', 3],
+          ['Langer dan 2 werkdagen', 3]
         ]);
 
         var options = {
@@ -45,7 +46,7 @@
           legend : {position:'none'},
           height:'100%',
           width:'100%',
-          colors: ['#009a2d', '#dd4b39']
+          colors: ['#009a2d', '#dd4b39', '#dd4b39']
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
