@@ -172,7 +172,7 @@
         height: '100%',
         legend: { position: 'top', maxLines: 3 },
         bar: { groupWidth: '75%' },
-        isStacked: true,
+        isStacked: 'percent',
         colors: ["#009a2d", "#dd4b39"]
       };
       var chart = new google.visualization.ColumnChart(document.getElementById('stackedChart1'));
