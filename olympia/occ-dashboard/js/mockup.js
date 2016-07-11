@@ -35,7 +35,7 @@
 	prototypeApp.prototype.drawPieChart1 = function(){
 		var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
-          ['binnen 1 werkdag', 4],
+          ['Binnen 1 werkdag', 4],
           ['Binnen 2 werkdagen', 3],
           ['Langer dan 2 werkdagen', 3]
         ]);
