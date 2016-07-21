@@ -2,9 +2,10 @@
 	'use strict'
 
 	//Manual bootstrap application
-	google.load('visualization', '1', {packages:['corechart', 'line', 'table']});
+	console.log(google);
+	google.charts.load('current', {'packages':['corechart', 'bar']});
 
-	google.setOnLoadCallback(function() {
+	google.charts.setOnLoadCallback(function() {
 	  angular.bootstrap(document.body, ['app.module']);
 	});
 

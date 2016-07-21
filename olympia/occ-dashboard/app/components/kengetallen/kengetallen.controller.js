@@ -15,6 +15,8 @@
 
 		function activate(){
 			commonService.initializeSelect2('.multiSelectOption');
+			commonService.initializeDateRange('.calenderRange');
+			commonService.chartCallBack(commonService.drawPieChart5);
 		}
 	}
 })();
