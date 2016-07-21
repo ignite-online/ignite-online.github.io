@@ -10,6 +10,10 @@
 
 	angular.module('app.module', [
 		//Third party dependencies
-		'ui.router'
+		'ui.router',
+		//Application
+		'common.module',
+		'opvolging.module',
+		'kangetallen.module'
 	]);
 })();

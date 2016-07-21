@@ -9,14 +9,18 @@
 		//States
 		$stateProvider
 			.state('Opvolging', {
-				url : "/Opvolging",
-				templateUrl : "app/components/kengetallen/kengetallen.html"
+				url : "/opvolging",
+				templateUrl : "app/components/opvolging/opvolging.html",
+				controller: 'opvolgingCntl',
+        		controllerAs: 'olympia'
 			})
 			.state('Kengetallen', {
 				url : "/kengetallen",
-				templateUrl : "app/components/opvolging/opvolging.html"
+				templateUrl : "app/components/kengetallen/kengetallen.html",
+				controller: 'kengetallenCntl',
+        		controllerAs: 'olympia'
 			});
 
-		$urlRouterProvider.otherwise("/kengetallen");
+		$urlRouterProvider.otherwise("/opvolging");
 	}	
-})()
+})();
