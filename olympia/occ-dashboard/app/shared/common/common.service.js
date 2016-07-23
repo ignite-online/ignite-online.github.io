@@ -44,6 +44,27 @@
 			google.charts.setOnLoadCallback(fn);	
 	}
 
+	
+	commonService.prototype.drawPieChart5 = function(){
+		var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['0-39 ‘niet passend', 2],
+          ['40-75 ‘passend’', 6],
+        ]);
+
+        var options = {
+          //title: 'My Daily Activities'
+          chartArea : {top:'10', width:'75%', height:'75%'},
+          legend : {position:'none'},
+          height:'100%',
+          width:'100%',
+          colors: ['#009a2d', '#dd4b39']
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart5'));
+
+        chart.draw(data, options);
+	}
 	commonService.prototype.stackedBarChart1 = function(){
   	var data = google.visualization.arrayToDataTable([
       ['time', 'green', 'red',
@@ -65,14 +86,12 @@
     var chart = new google.visualization.ColumnChart(document.getElementById('stackedChart1'));
     chart.draw(data, options);
 	}
-
 	commonService.prototype.initializeSelect2 = function(ele){
 		$(ele).select2({
 			placeholder: "Select a option",
 			width:'253'
 		});	
 	};
-  
 	commonService.prototype.initializeDateRange = function(ele){
 		$(ele).daterangepicker({
 			initialText: 'Selecteer periode',
