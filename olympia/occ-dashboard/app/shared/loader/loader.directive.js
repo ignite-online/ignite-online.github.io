@@ -8,7 +8,7 @@
 	function olympiaLoader(loaderService, commonService) {
 	    var directive =  {
 	        restrict : 'E',
-	        templateUrl : '../app/shared/loader/loader.html',
+	        templateUrl : './app/shared/loader/loader.html',
 	        scope : false,
 	        replace: true,
 	        link : function(scope, element, attrs){
