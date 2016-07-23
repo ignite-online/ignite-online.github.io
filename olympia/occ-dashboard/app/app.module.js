@@ -2,17 +2,17 @@
 	'use strict'
 
 	//Manual bootstrap application
-	console.log(google);
 	google.charts.load('current', {'packages':['corechart', 'bar']});
 
 	google.charts.setOnLoadCallback(function() {
-	  angular.bootstrap(document.body, ['app.module']);
+	  angular.bootstrap(document.body, ['olympia-app']);
 	});
 
-	angular.module('app.module', [
+	angular.module('olympia-app', [
 		//Third party dependencies
 		'ui.router',
 		//Application
+		'loader.module',
 		'common.module',
 		'opvolging.module',
 		'kangetallen.module'

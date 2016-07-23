@@ -1,6 +1,6 @@
 (function(){
 	'use strict'
-	angular.module('app.module')
+	angular.module('olympia-app')
 		.config(appConfig);
 
 	appConfig.$inject = ['$stateProvider', '$urlRouterProvider'];

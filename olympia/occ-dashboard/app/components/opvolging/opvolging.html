@@ -35,14 +35,14 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td class="white">120</td>
-								<td>120</td>
-								<td>120</td>
+								<td class="white" data-ng-bind="olympia.dashboard.kandidatenCcerapportageNumber"></td>
+								<td data-ng-bind="olympia.dashboard.gecontacteerdNumber"></td>
+								<td data-ng-bind="olympia.dashboard.nietGecontacteeredNumber"></td>
 							</tr>
 							<tr>
 								<td class="white">100%</td>
-								<td>70%</td>
-								<td>30%</td>
+								<td data-ng-bind="olympia.dashboard.gecontacteerdPercent + '%'"></td>
+								<td data-ng-bind="olympia.dashboard.nietGecontacteeredPercent  + '%'"></td>
 							</tr>
 						</tbody>
 					</table>
@@ -60,21 +60,21 @@
 						<tbody>
 							<tr>
 								<td class="white">Gebeld én gesproken</td>
-								<td>120</td>
-								<td>120</td>
-								<td>120</td>
+								<td data-ng-bind="olympia.dashboard.eenWerkdagGesproken">120</td>
+								<td data-ng-bind="olympia.dashboard.tweeWerkdagGesproken">120</td>
+								<td data-ng-bind="olympia.dashboard.langerWerkdagGesproken">120</td>
 							</tr>
 							<tr>
 								<td class="white">Gemaild / Voicemail ingesproken</td>
-								<td>120</td>
-								<td>120</td>
-								<td>120</td>
+								<td data-ng-bind="olympia.dashboard.eenWerkdagVoiceMail">120</td>
+								<td data-ng-bind="olympia.dashboard.tweeWerkdagVoiceMail">120</td>
+								<td data-ng-bind="olympia.dashboard.langerWerkdagVoiceMail">120</td>
 							</tr>
 							<tr>
 								<td class="white">&nbsp;</td>
-								<td>15%</td>
-								<td>20%</td>
-								<td>120%</td>
+								<td data-ng-bind="olympia.dashboard.eenWerkdagPercent + '%'">15%</td>
+								<td data-ng-bind="olympia.dashboard.tweeWerkdagPercent + '%'">20%</td>
+								<td data-ng-bind="olympia.dashboard.langerWerkdagPercent + '%'">120%</td>
 							</tr>
 						</tbody>
 					</table>
@@ -105,14 +105,14 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td class="white">120</td>
-							<td>120</td>
-							<td>120</td>
+							<td class="white" data-ng-bind="olympia.dashboard.passendeKandidatenNumber + '(' + olympia.dashboard.passendeKandidatenCombinedPercent + ')'">120</td>
+							<td data-ng-bind="olympia.dashboard.intakegesprekPlaatsgevondenNumber">120</td>
+							<td data-ng-bind="olympia.dashboard.verdereOpvolgingNumber">120</td>
 						</tr>
 						<tr>
 							<td class="white">100%</td>
-							<td>20%</td>
-							<td>20%</td>
+							<td data-ng-bind="olympia.dashboard.intakegesprekPlaatsgevondenPercent + '%'">20%</td>
+							<td data-ng-bind="olympia.dashboard.verdereOpvolgingPercent + '%'">20%</td>
 						</tr>
 					</tbody>
 				</table>
@@ -144,20 +144,20 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td class="white">120</td>
-							<td>120</td>
-							<td>120</td>
-							<td>120</td>
-							<td>120</td>
-							<td>120</td>
+							<td class="white" data-ng-bind="olympia.dashboard.intakegesprekPlaatsgevondenNumber">120</td>
+							<td data-ng-bind="olympia.dashboard.kandidatenVoorgesteldklantNumber">120</td>
+							<td data-ng-bind="olympia.dashboard.sollicitatiegesprekkenIngeplandKlantNumber">120</td>
+							<td data-ng-bind="olympia.dashboard.sollicitatiegesprekkenPlaatsgevondenKlantNumber">120</td>
+							<td data-ng-bind="olympia.dashboard.kandidatenGeplaatstNumber">120</td>
+							<td data-ng-bind="olympia.dashboard.kandidatenNietGeplaatstNumber">120</td>
 						</tr>
 						<tr>
 							<td class="white">100%</td>
-							<td>100%</td>
-							<td>80% (15%)</td>
-							<td>20% (15%)</td>
-							<td>20% (15%)</td>
-							<td>20% (15%)</td>
+							<td data-ng-bind="olympia.dashboard.kandidatenVoorgesteldklantPercent + '%'">100%</td>
+							<td data-ng-bind="olympia.dashboard.sollicitatiegesprekkenIngeplandKlantPercent + '%' + '(' + olympia.dashboard.sollicitatiegesprekkenIngeplandKlantCombinedPercent + '%)'">80% (15%)</td>
+							<td data-ng-bind="olympia.dashboard.sollicitatiegesprekkenPlaatsgevondenKlantPercent + '%' + '(' + olympia.dashboard.sollicitatiegesprekkenPlaatsgevondenKlantCombinedPercent + '%)'">80% (15%)</td>
+							<td data-ng-bind="olympia.dashboard.kandidatenGeplaatstPercent + '%' + '(' + olympia.dashboard.kandidatenGeplaatstCombinedPercent + '%)'">80% (15%)</td>
+							<td data-ng-bind="olympia.dashboard.kandidatenNietGeplaatstPercent + '%' + '(' + olympia.dashboard.kandidatenNietGeplaatstCombinedPercent + '%)'">80% (15%)</td>
 						</tr>
 					</tbody>
 				</table>
@@ -196,20 +196,20 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td class="white">120</td>
-							<td>120</td>
-							<td>60/120</td>
-							<td>120</td>
-							<td>60/120</td>
-							<td>60/120</td>
+							<td class="white" data-ng-bind="olympia.dashboard.uitzendPlaatsingenAangemaaktNumber">120</td>
+							<td data-ng-bind="olympia.dashboard.wsPlaatsingenAangemaaktNumber">120</td>
+							<td data-ng-bind="olympia.dashboard.totaalAantalPlaatsingenAangemaakt">60/120</td>
+							<td data-ng-bind="olympia.dashboard.uitzendplaatsingenMetUrenbriefjeNumber">120</td>
+							<td data-ng-bind="olympia.dashboard.wsPlaatsingenGefactureerdNumber">60/120</td>
+							<td data-ng-bind="olympia.dashboard.totaalAantalPlaatsingenPlaatsgevonden">60/120</td>
 						</tr>
 						<tr>
-							<td class="white">60% (15%)</td>
-							<td>50% (15%)</td>
-							<td>50% (15%)</td>
-							<td>50% (15%)</td>
-							<td>50% (15%)</td>
-							<td>50% (15%)</td>
+							<td class="white" data-ng-bind="olympia.dashboard.uitzendPlaatsingenAangemaaktPercent">60% (15%)</td>
+							<td data-ng-bind="olympia.dashboard.wsPlaatsingenAangemaaktPercent">50% (15%)</td>
+							<td>100%</td>
+							<td data-ng-bind="olympia.dashboard.uitzendplaatsingenMetUrenbriefjePercent">50% (15%)</td>
+							<td data-ng-bind="olympia.dashboard.wsPlaatsingenGefactureerdPercent">50% (15%)</td>
+							<td>100%</td>
 						</tr>
 					</tbody>
 				</table>
@@ -242,16 +242,16 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td class="white">60/120</td>
-							<td>60/120</td>
-							<td>60/120</td>
-							<td>60/120</td>
+							<td class="white" data-ng-bind="olympia.dashboard.contactMomentOneWeekNumberActual + '/' + olympia.dashboard.contactMomentOneWeekNumberTotal">60/120</td>
+							<td data-ng-bind="olympia.dashboard.contactMomentOneMaandNumberActual + '/' + olympia.dashboard.contactMomentOneMaandNumberTotal">60/120</td>
+							<td data-ng-bind="olympia.dashboard.contactMomentThreeMaandNumberActual + '/' + olympia.dashboard.contactMomentThreeMaandNumberTotal">60/120</td>
+							<td data-ng-bind="olympia.dashboard.contactVanafSixMaandenNumberActual + '/' + olympia.dashboard.contactVanafSixMaandenNumberTotal">60/120</td>
 						</tr>
 						<tr>
-							<td class="white">20%</td>
-							<td>60%</td>
-							<td>50%</td>
-							<td>50%</td>
+							<td class="white" data-ng-bind="olympia.dashboard.contactMomentOneWeekPercent + '%'">20%</td>
+							<td data-ng-bind="olympia.dashboard.contactMomentOneMaandPercent + '%'">60%</td>
+							<td data-ng-bind="olympia.dashboard.contactMomentThreeMaandPercent + '%'">50%</td>
+							<td data-ng-bind="olympia.dashboard.contactVanafSixMaandenPercent + '%'">50%</td>
 						</tr>
 					</tbody>
 				</table>
