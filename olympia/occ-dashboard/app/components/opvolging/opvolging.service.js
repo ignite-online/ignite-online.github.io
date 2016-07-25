@@ -153,15 +153,15 @@
 		}
 	}
 
-	opvolgingService.prototype.stackedBarChart1 = function(){
+	opvolgingService.prototype.stackedBarChart1 = function(a, b, c, d){
 		return function(){
 			var data = google.visualization.arrayToDataTable([
 		      ['time', 'green', 'red',
 		       { role: 'annotation' } ],
-		      ['1e Wk', 10, 24,''],
-		      ['1e Mnd', 16, 22,''],
-		      ['3e Mnd', 28, 19,''],
-		      ['>6Mnd', 28, 19,'']
+		      ['1e Wk', a, (100-a),''],
+		      ['1e Mnd', b, (100-b),''],
+		      ['3e Mnd', c, (100-c),''],
+		      ['>6Mnd', d, (100-d),'']
 		    ]);
 
 		    var options = {
