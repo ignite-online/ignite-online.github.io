@@ -9,11 +9,12 @@
 	function commonService($timeout, $http, $q, enumApp, $rootScope){
 
 		this.rootScope = $rootScope;
+		this.timeout = $timeout;
 
 		this.sendItems = {
 			'startDate' : '',
 			'endDate' : '',
-			'officesList' : []
+			'officesList' : [1]
 		};
 
 	    this.getRandomMessage = getRandomMessage;
@@ -109,10 +110,20 @@
     chart.draw(data, options);
 	}
 	commonService.prototype.initializeSelect2 = function(ele){
+		var self = this;
 		$(ele).select2({
 			placeholder: "Select a option",
 			width:'253'
 		});	
+
+		$(ele).on('select2:select', function (evt) {
+		  // Do something
+		  var selectedValue = $(ele).val();
+
+		  self.sendItems.officesList = selectedValue;
+
+		  self.rootScope.$broadcast('dateRangePickerChanged');
+		});
 	};
 	commonService.prototype.initializeDateRange = function(ele){
 		var self = this;
@@ -165,7 +176,9 @@
 			widget : function(event, data){console.log(event, data);}
 		});
 
-		$(ele).on('change', function(event){
+		$(ele).on('change' , callBack);
+
+		function callBack(){
 			var dateRange = $(ele).daterangepicker("getRange"),
 				startDate = self.dateParser(dateRange.start, "DDMMYYYY"),
 				endDate = self.dateParser(dateRange.end, "DDMMYYYY");
@@ -175,6 +188,6 @@
 			self.sendItems.endDate =endDate;
 
 			self.rootScope.$broadcast('dateRangePickerChanged');
-		});
+		}
 	}
 })();
