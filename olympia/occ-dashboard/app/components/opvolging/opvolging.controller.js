@@ -8,13 +8,14 @@
 
 	function opvolgingCntl(opvolgingService, commonService){
 		var vm = this;
-		vm.dashboard = commonService.dashboardData; 
+		vm.dashboard = []; 
 
 		activate();
 
 		///////////////////
 
 		function activate(){
+			vm.dashboard = commonService.dashboardData; 
 			commonService.initializeSelect2('.multiSelectOption');
 			commonService.initializeDateRange('.calenderRange');
 			commonService.chartCallBack(opvolgingService.drawPieChart(vm.dashboard.gecontacteerdPercent, vm.dashboard.nietGecontacteeredPercent));
@@ -24,7 +25,8 @@
 			commonService.chartCallBack(opvolgingService.drawPieChart7(vm.dashboard.kandidatenGeplaatstVoorgesteldeChart, vm.dashboard.kandidatenNietGeplaatstVoorgesteldeChart));
 			commonService.chartCallBack(opvolgingService.stackedBarChart(vm.dashboard.wsPlaatsingenAangemaaktNumber, vm.dashboard.uitzendPlaatsingenAangemaaktNumber));
 			commonService.chartCallBack(opvolgingService.stackedBarChart1(vm.dashboard.contactMomentOneWeekPercent, vm.dashboard.contactMomentOneMaandPercent, vm.dashboard.contactMomentThreeMaandPercent, vm.dashboard.contactVanafSixMaandenPercent));
-			commonService.chartCallBack(opvolgingService.columnChart(vm.dashboard.verdereOpvolgingPercent, vm.dashboard.kandidatenVoorgesteldklantNumber, vm.dashboard.sollicitatiegesprekkenIngeplandKlantNumber, vm.dashboard.sollicitatiegesprekkenPlaatsgevondenKlantNumber, vm.dashboard.kandidatenGeplaatstNumber));
+			commonService.chartCallBack(opvolgingService.columnChart(vm.dashboard.allGespreksDatumCandidates, vm.dashboard.allVoorstelDatumCandidates, vm.dashboard.allSollicitatieIngevoerdCandidates, vm.dashboard.allSollicitatieDatumCandidates, vm.dashboard.allPlaatsingsDatumNormaalWervingCandidates));
+			commonService.chartCallBack(opvolgingService.columnChart1(vm.dashboard.allPlaatsingsDatumNormaalCandidates, vm.dashboard.allPlaatsingsDatumWervingCandidates));
 		}
 	}
 })();

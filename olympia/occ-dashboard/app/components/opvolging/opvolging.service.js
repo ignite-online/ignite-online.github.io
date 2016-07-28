@@ -180,7 +180,7 @@
 	opvolgingService.prototype.columnChart = function(a, b, c, d, e){
 		return function(){
 			var data = google.visualization.arrayToDataTable([
-		      [' ', ' '],
+		      ['', ''],
 		      ['Gespreksdatum', a],
 		      ['Voorsteldatum', b],
 		      ['Sollicitatieingevoerd', c],
@@ -191,10 +191,29 @@
 		    var options = {
 		      width:'100%',
 		      height: '100%',
-		      //legend: { position: 'top', maxLines: 3 }
+		      legend: { position: 'none'},
 		      colors: ["#009a2d", "#dd4b39"]
 		    };
 		    var chart = new google.visualization.ColumnChart(document.getElementById('columnChart'));
+		    chart.draw(data, options);	
+		}
+	}
+
+	opvolgingService.prototype.columnChart1 = function(a, b){
+		return function(){
+			var data = google.visualization.arrayToDataTable([
+		      ['', ''],
+		      ['Uitzendplaatsingen aangemaakt', a],
+		      ['W&S plaatsingen aangemaakt', b]
+		    ]);
+
+		    var options = {
+		      width:'100%',
+		      height: '100%',
+		      legend: { position: 'none'},
+		      colors: ["#009a2d", "#dd4b39"]
+		    };
+		    var chart = new google.visualization.ColumnChart(document.getElementById('columnChart1'));
 		    chart.draw(data, options);	
 		}
 	}
