@@ -176,4 +176,26 @@
 		    chart.draw(data, options);	
 		}
 	}
+
+	opvolgingService.prototype.columnChart = function(a, b, c, d, e){
+		return function(){
+			var data = google.visualization.arrayToDataTable([
+		      [' ', ' '],
+		      ['Gespreksdatum', a],
+		      ['Voorsteldatum', b],
+		      ['Sollicitatieingevoerd', c],
+		      ['Sollicitatiedatum', d],
+		      ['Plaatsingsdatum_normaal Plaatsingdatum_wervings', e]
+		    ]);
+
+		    var options = {
+		      width:'100%',
+		      height: '100%',
+		      //legend: { position: 'top', maxLines: 3 }
+		      colors: ["#009a2d", "#dd4b39"]
+		    };
+		    var chart = new google.visualization.ColumnChart(document.getElementById('columnChart'));
+		    chart.draw(data, options);	
+		}
+	}
 })();

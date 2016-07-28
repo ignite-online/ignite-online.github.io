@@ -263,3 +263,47 @@
 		</div>
 	</div>
 </div>
+
+<div class="row hide">
+	<div class="col-sm-12">
+		<h3>Kopie</h3>
+		<div class="row">
+			<div class="col-sm-8">
+				<!-- Table view -->
+				<table class="table table-striped table-reports table-striped" >
+					<thead>
+						<tr>
+							<th class=" align-center font-size-normal"><div>Gespreksdatum
+								<span class="info popoverData" data-content="Gespreksdatum" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span>
+								</div>
+							</th>
+							<th ><div>Voorsteldatum<span class="info popoverData" data-content="Voorsteldatum" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+							<th><div>Sollicitatieingevoerd<span class="info popoverData" data-content="sollicitatieingevoerd" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+							<th><div>Sollicitatiedatum<span class="info popoverData" data-content="sollicitatiedatum" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+							<th><div>Plaatsingsdatum_normaal Plaatsingdatum_wervings<span class="info popoverData" data-content="Plaatsingsdatum_normaal Plaatsingdatum_wervings" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="white" data-ng-bind="olympia.dashboard.verdereOpvolgingPercent"></td>
+							<td data-ng-bind="olympia.dashboard.kandidatenVoorgesteldklantNumber">60/120</td>
+							<td data-ng-bind="olympia.dashboard.sollicitatiegesprekkenIngeplandKlantNumber">60/120</td>
+							<td data-ng-bind="olympia.dashboard.sollicitatiegesprekkenPlaatsgevondenKlantNumber">60/120</td>
+							<td data-ng-bind="olympia.dashboard.kandidatenGeplaatstNumber">60/120</td>
+						</tr>
+						<!-- <tr>
+							<td class="white" data-ng-bind="olympia.dashboard.contactMomentOneWeekPercent + '%'">20%</td>
+							<td data-ng-bind="olympia.dashboard.contactMomentOneMaandPercent + '%'">60%</td>
+							<td data-ng-bind="olympia.dashboard.contactMomentThreeMaandPercent + '%'">50%</td>
+							<td data-ng-bind="olympia.dashboard.contactVanafSixMaandenPercent + '%'">50%</td>
+						</tr> -->
+					</tbody>
+				</table>
+			</div>
+			<div class="col-sm-4">
+				<!-- Graph -->
+				<div id="columnChart"></div>
+			</div>
+		</div>
+	</div>
+</div>
