@@ -30,8 +30,6 @@
 		}
 
 		function dashboardDataSuccess(data){
-			console.log(data);
-
 			commonService.dashboardData = data;
 
 			vm.dashboard = commonService.dashboardData; 
