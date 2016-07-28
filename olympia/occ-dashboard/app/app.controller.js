@@ -4,16 +4,24 @@
 	angular.module('olympia-app')
 		.controller('olympiaCntl', olympiaCntl);
 
-	olympiaCntl.$inject = ['loaderService', 'commonService'];
+	olympiaCntl.$inject = ['loaderService', 'commonService', '$scope'];
 
-	function olympiaCntl(loaderService, commonService){
+	function olympiaCntl(loaderService, commonService, $scope){
 		var vm = this;
 
 		activate();
 
+		$scope.$on("dateRangePickerChanged", dateRangePickerChanged)
+
 		/////////////////////////////
 
 		function activate(){
+			dateRangePickerChanged()
+		}
+
+		function dateRangePickerChanged(){
+			console.log('picker change');
+
 			loaderService.toggle(true);	
 
 			commonService.getDashboardData()
@@ -32,6 +40,6 @@
 			console.log(error);
 
 			loaderService.toggle(false);
-		}
+		}		
 	}
 })();

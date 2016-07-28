@@ -4,36 +4,58 @@
 	angular.module('common.module')
 		.service('commonService', commonService);
 
-	commonService.$inject = ['$timeout', '$http', '$q', 'enumApp'];
+	commonService.$inject = ['$timeout', '$http', '$q', 'enumApp', '$rootScope'];
 
-	function commonService($timeout, $http, $q, enumApp){
+	function commonService($timeout, $http, $q, enumApp, $rootScope){
 
-    this.getRandomMessage = getRandomMessage;
-    this.getDashboardData = getDashboardData;
+		this.rootScope = $rootScope;
 
-    //////////////////////////////////////////////
+		this.sendItems = {
+			'startDate' : '',
+			'endDate' : '',
+			'officesList' : []
+		};
 
-    function getRandomMessage(){
-      var num = Math.floor(enumApp.RANDOMMESSAGE.length * Math.random());
-      return enumApp.RANDOMMESSAGE[num];
-    }
+	    this.getRandomMessage = getRandomMessage;
+	    this.getDashboardData = getDashboardData;
+	    this.dateParser = dateParser;
 
-    function getDashboardData(){
-      var deffered = $q.defer();
+	    //////////////////////////////////////////////
 
-      $http({
-        url : enumApp.URL + "GetOccDashBoardReports",
-        method : "GET",
-      })
-      .success(function(data){
-        deffered.resolve(data);       
-      })
-      .error(function(){
-        deffered.reject("Failed to post data");
-      });
+	    function getRandomMessage(){
+	      var num = Math.floor(enumApp.RANDOMMESSAGE.length * Math.random());
+	      return enumApp.RANDOMMESSAGE[num];
+	    }
 
-      return deffered.promise;
-    }
+	    function getDashboardData(){
+	      var deffered = $q.defer();
+
+	      $http({
+	        url : enumApp.URL + "GetOccDashBoardReports",
+	        method : "GET",
+	        params : {
+	        	'officesList' : this.sendItems.officesList,
+	        	'startDate' : this.sendItems.startDate,
+	        	'endDate' : this.sendItems.endDate
+	        }
+	      })
+	      .success(function(data){
+	        deffered.resolve(data);       
+	      })
+	      .error(function(){
+	        deffered.reject("Failed to post data");
+	      });
+
+	      return deffered.promise;
+	    }
+
+	    function dateParser(dateTimeToParse, format){
+			if(typeof dateTimeToParse === 'undefined')
+				return false;
+
+			var parsed = moment(dateTimeToParse).format("DDMMYYYY");
+			return parsed;
+		}
 	}
 
   //commonService.prototype.dashboardData = {"kandidatenCcerapportageNumber":2442,"gecontacteerdNumber":1769,"gecontacteerdPercent":72.4,"nietGecontacteeredNumber":673,"nietGecontacteeredPercent":27.6,"eenWerkdagGesproken":0,"eenWerkdagVoiceMail":0,"eenWerkdagPercent":0.0,"tweeWerkdagGesproken":0,"tweeWerkdagVoiceMail":0,"tweeWerkdagPercent":0.0,"langerWerkdagGesproken":0,"langerWerkdagVoiceMail":0,"langerWerkdagPercent":0.0,"passendeKandidatenNumber":2235,"passendeKandidatenCombinedPercent":91.5,"intakegesprekPlaatsgevondenNumber":22,"intakegesprekPlaatsgevondenPercent":1.0,"verdereOpvolgingNumber":1534,"verdereOpvolgingPercent":68.6,"kandidatenVoorgesteldklantNumber":6,"kandidatenVoorgesteldklantPercent":27.3,"sollicitatiegesprekkenIngeplandKlantNumber":4,"sollicitatiegesprekkenIngeplandKlantPercent":18.2,"sollicitatiegesprekkenIngeplandKlantCombinedPercent":66.7,"sollicitatiegesprekkenPlaatsgevondenKlantNumber":0,"sollicitatiegesprekkenPlaatsgevondenKlantPercent":0.0,"sollicitatiegesprekkenPlaatsgevondenKlantCombinedPercent":0.0,"kandidatenGeplaatstNumber":0,"kandidatenGeplaatstPercent":0.0,"kandidatenGeplaatstCombinedPercent":0.0,"kandidatenNietGeplaatstNumber":22,"kandidatenNietGeplaatstPercent":100.0,"kandidatenNietGeplaatstCombinedPercent":0.0,"kandidatenGeplaatstGesprokenChart":0.0,"kandidatenNietGeplaatstGesprokenChart":100.0,"kandidatenGeplaatstVoorgesteldeChart":0.0,"kandidatenNietGeplaatstVoorgesteldeChart":366.7,"uitzendPlaatsingenAangemaaktNumber":0,"uitzendPlaatsingenAangemaaktPercent":0.0,"wsPlaatsingenAangemaaktNumber":0,"wsPlaatsingenAangemaaktPercent":0.0,"totaalAantalPlaatsingenAangemaakt":0,"uitzendplaatsingenMetUrenbriefjeNumber":0,"uitzendplaatsingenMetUrenbriefjePercent":0.0,"wsPlaatsingenGefactureerdNumber":0,"wsPlaatsingenGefactureerdPercent":0.0,"totaalAantalPlaatsingenPlaatsgevonden":0,"contactMomentOneWeekNumberTotal":122,"contactMomentOneWeekNumberActual":2,"contactMomentOneWeekPercent":1.6,"contactMomentOneMaandNumberTotal":72,"contactMomentOneMaandNumberActual":2,"contactMomentOneMaandPercent":2.8,"contactMomentThreeMaandNumberTotal":5,"contactMomentThreeMaandNumberActual":0,"contactMomentThreeMaandPercent":0.0,"contactVanafSixMaandenNumberTotal":8,"contactVanafSixMaandenNumberActual":0,"contactVanafSixMaandenPercent":0.0}
@@ -93,6 +115,8 @@
 		});	
 	};
 	commonService.prototype.initializeDateRange = function(ele){
+		var self = this;
+
 		$(ele).daterangepicker({
 			initialText: 'Selecteer periode',
 			presetRanges: [{
@@ -139,6 +163,18 @@
 			applyButtonText: "Toepassen",
 			applyOnMenuSelect: false,
 			widget : function(event, data){console.log(event, data);}
+		});
+
+		$(ele).on('change', function(event){
+			var dateRange = $(ele).daterangepicker("getRange"),
+				startDate = self.dateParser(dateRange.start, "DDMMYYYY"),
+				endDate = self.dateParser(dateRange.end, "DDMMYYYY");
+
+			//set startdate and enddate
+			self.sendItems.startDate =startDate;
+			self.sendItems.endDate =endDate;
+
+			self.rootScope.$broadcast('dateRangePickerChanged');
 		});
 	}
 })();
