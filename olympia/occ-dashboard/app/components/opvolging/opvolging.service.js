@@ -4,10 +4,36 @@
 	angular.module('opvolging.module')
 		.service('opvolgingService', opvolgingService);
 
-	opvolgingService.$inject = [];
+	opvolgingService.$inject = ['commonService'];
 
-	function opvolgingService(){
+	function opvolgingService(commonService){
 		var vm = this;
+
+		vm.isKandidatenShow = isKandidatenShow;
+
+		///////////////////////
+
+		function isKandidatenShow(){
+			var response = commonService.sendItems,
+				previousMonth = commonService.dateParser(moment().subtract(2, 'months')), //Last Month
+				currentMonth = moment().subtract(0, 'months'),
+				end = moment(response.endDate, "DDMMYYYY"), //response.endDate;
+				start = moment(response.startDate, "DDMMYYYY");
+
+			//Check if enddate or startdate is empty
+			if(response.startDate === "" || response.endDate === ""){
+				return false;
+			}
+
+			//Condition: 
+			//- The selected date range is at least 3 months
+			//- The newest date is at least 1 month old"
+			if(end.diff(start, "months") >= 2 && currentMonth.diff(end, 'months') >=1){
+				return true;
+			}else{
+				return false;
+			}
+		}
 	}
 
 	opvolgingService.prototype.drawPieChart = function(a, b){
