@@ -15,3 +15,7 @@ table.table-reports tr th:first-child{
 	max-height:100px;
 	overflow-y:	auto; 
 }
+
+.grayedOut table{
+	color:#9E9E9E;
+}	

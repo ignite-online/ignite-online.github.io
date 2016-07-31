@@ -106,7 +106,7 @@
 		}
 	}
 
-	opvolgingService.prototype.drawPieChart3 = function(a, b){
+	opvolgingService.prototype.drawPieChart3 = function(a, b, c){
 		return function(){
 			var data = google.visualization.arrayToDataTable([
 	          ['Task', 'Hours per Day'],
@@ -123,8 +123,13 @@
 	          legend : {position:'none'},
 	          height:'100%',
 	          width:'100%',
-	          colors: ['#009a2d', '#dd4b39']
 	        };
+
+	        if(c === 'disable'){
+        		options.colors = ['#ccc']
+	        }else{
+	        	options.colors = ['#009a2d', '#dd4b39']
+	        }
 
 	        var chart = new google.visualization.PieChart(document.getElementById('piechart3'));
 
@@ -132,7 +137,7 @@
 		}
 	}
 
-	opvolgingService.prototype.drawPieChart7 = function(a, b){
+	opvolgingService.prototype.drawPieChart7 = function(a, b, c){
 		return function(){
 			var data = google.visualization.arrayToDataTable([
 				['Task', 'Hours per Day'],
@@ -140,17 +145,22 @@
 				['Kandidaten niet geplaatst', b],
 			]);
 
-			var options = {
-				title: 'Voorgestelde kandidaten geplaatst',
-				titleTextStyle : {
-				fontSize : 12,
-				},
-				chartArea : {top:'20', width:'80%', height:'100%'},
-				legend : {position:'none'},
-				height:'100%',
-				width:'100%',
-				colors: ['#009a2d', '#dd4b39']
-			};
+			 var options = {
+	          title: 'Gesproken kandidaten geplaatst',
+	          titleTextStyle : {
+	            fontSize : 12,
+	          },
+	          chartArea : {top:'20', width:'80%', height:'100%'},
+	          legend : {position:'none'},
+	          height:'100%',
+	          width:'100%',
+	        };
+
+	        if(c === 'disable'){
+        		options.colors = ['#ccc']
+	        }else{
+	        	options.colors = ['#009a2d', '#dd4b39']
+	        }
 
 			var chart = new google.visualization.PieChart(document.getElementById('piechart7'));
 
