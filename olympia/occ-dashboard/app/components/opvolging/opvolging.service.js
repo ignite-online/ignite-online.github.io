@@ -247,7 +247,7 @@
 		      width:'100%',
 		      height: '100%',
 		      legend: { position: 'none'},
-		      colors: ["#009a2d", "#dd4b39"]
+		      colors: ["#171580", "#cccccc"]
 		    };
 		    var chart = new google.visualization.ColumnChart(document.getElementById('columnChart1'));
 		    chart.draw(data, options);	
