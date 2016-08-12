@@ -19,3 +19,6 @@ table.table-reports tr th:first-child{
 .grayedOut table{
 	color:#9E9E9E;
 }	
+h3 .helper{
+	font-size:0.8em;
+}

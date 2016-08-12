@@ -2,7 +2,7 @@
 	<div class="col-sm-7">
 		<div class="form-group">
 			<select class="btn btn-default multiSelectOption" multiple="multiple">
-				<option value="1" selected>Alle vestigingen</option>
+				<option value="1">Alle vestigingen</option>
 				<option value="133" label="Amsterdam">Amsterdam</option>
 				<option value="133" label="Amsterdam Haarlemmerstraat">Amsterdam Haarlemmerstraat</option>
 				<option value="559" label="Barendrecht - Inhouse Greenery">Barendrecht - Inhouse Greenery</option>
@@ -127,7 +127,7 @@
 </div>
 <div class="row" data-ng-class="{'grayedOut' : !olympia.isKandidaten}">
 	<div class="col-sm-12">
-		<h3>Kandidaten voorstellen bij klant</h3>
+		<h3>Kandidaten voorstellen bij klant <span class="helper" data-ng-show="!olympia.isKandidaten">(Hier komt een instructie)</span></h3>
 		<div class="row">
 			<div class="col-sm-8">
 				<!-- Table view -->
@@ -178,7 +178,7 @@
 </div>
 <div class="row">
 	<div class="col-sm-12">
-		<h3>Kopie van Kandidaten voorstellen bij klant</h3>
+		<h3>Activiteiten verricht</h3>
 		<div class="row">
 			<div class="col-sm-8">
 				<!-- Table view -->
