@@ -39,7 +39,7 @@
 	activiteitenService.prototype.stackedBarChart1 = function(a, b, c, d){
 		return function(){
 			var data = google.visualization.arrayToDataTable([
-		      ['time', 'green', 'red',
+		      ['time', 'Verricht', 'Niet verricht',
 		       { role: 'annotation' } ],
 		      ['1e Wk', a, (100-a),''],
 		      ['1e Mnd', b, (100-b),''],

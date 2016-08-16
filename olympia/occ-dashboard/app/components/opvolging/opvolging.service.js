@@ -146,7 +146,7 @@
 			]);
 
 			 var options = {
-	          title: 'Gesproken kandidaten geplaatst',
+	          title: 'Voorgestelde kandidaten geplaatst',
 	          titleTextStyle : {
 	            fontSize : 12,
 	          },
