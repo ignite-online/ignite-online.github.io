@@ -8,11 +8,17 @@
 	function appConfig($stateProvider, $urlRouterProvider){
 		//States
 		$stateProvider
-			.state('Opvolging', {
-				url : "/opvolging",
+			.state('Funnel', {
+				url : "/funnel",
 				templateUrl : "app/components/opvolging/opvolging.html",
 				controller: 'opvolgingCntl',
         		controllerAs: 'olympia'
+			})
+			.state('Activiteiten', {
+				url : "/activiteiten",
+				templateUrl : "app/components/activiteiten/activiteiten.html",
+				//controller: 'opvolgingCntl',
+        		//controllerAs: 'olympia'
 			})
 			.state('Kengetallen', {
 				url : "/kengetallen",
@@ -21,6 +27,6 @@
         		controllerAs: 'olympia'
 			});
 
-		$urlRouterProvider.otherwise("/opvolging");
+		$urlRouterProvider.otherwise("/funnel");
 	}	
 })();
