@@ -17,8 +17,8 @@
 			.state('Activiteiten', {
 				url : "/activiteiten",
 				templateUrl : "app/components/activiteiten/activiteiten.html",
-				//controller: 'opvolgingCntl',
-        		//controllerAs: 'olympia'
+				controller: 'activiteitenCntl',
+        		controllerAs: 'olympia'
 			})
 			.state('Kengetallen', {
 				url : "/kengetallen",

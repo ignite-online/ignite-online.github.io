@@ -176,42 +176,7 @@
 		<hr/>
 	</div>
 </div>
-<div class="row">
-	<div class="col-sm-12">
-		<h3>Activiteiten verricht</h3>
-		<div class="row">
-			<div class="col-sm-8">
-				<!-- Table view -->
-				<table class="table table-striped table-reports table-striped" >
-					<thead>
-						<tr>
-							<th class=" align-center font-size-normal"><div>Kandidaten Pool-/intakegesprek plaatsgevonden<span class="info popoverData" data-content="Kandidaten Pool-/intakegesprek plaatsgevonden" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
-							<th ><div>Kandidaten voorgesteld bij klant<span class="info popoverData" data-content="Kandidaten voorgesteld bij klant" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
-							<th ><div>Sollicitatiegesprekken ingepland bij klant<span class="info popoverData" data-content="Sollicitatiegesprekken ingepland bij klant" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
-							<th ><div>Sollicitatiegesprekken plaatsgevonden bij klant<span class="info popoverData" data-content="Sollicitatiegesprekken plaatsgevonden bij klant" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
-							<th ><div>Kandidaten geplaatst<span class="info popoverData" data-content="Kandidaat geplaatst" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td class="white" data-ng-bind="olympia.dashboard.allGespreksDatumCandidates">120</td>
-							<td data-ng-bind="olympia.dashboard.allVoorstelDatumCandidates">120</td>
-							<td data-ng-bind="olympia.dashboard.allSollicitatieIngevoerdCandidates">120</td>
-							<td data-ng-bind="olympia.dashboard.allSollicitatieDatumCandidates">120</td>
-							<td data-ng-bind="olympia.dashboard.allPlaatsingsDatumNormaalWervingCandidates">120</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<div class="col-sm-4">
-				<!-- <h5>Gesproken kandidaten geplaatst</h5> -->
-				<!-- Graph -->
-				<div id="columnChart"></div>
-			</div>
-		</div>
-		<hr/>
-	</div>
-</div>
+
 <div class="row">
 	<div class="col-sm-12">
 		<h3>Geplaatste OCC kandidaten</h3>
@@ -253,79 +218,6 @@
 			<div class="col-sm-4">
 				<!-- Graph -->
 				<div id="stackedChart"></div>
-			</div>
-		</div>
-		<hr/>
-	</div>
-</div>
-<div class="row">
-	<div class="col-sm-12">
-		<h3>Kopie van Geplaatste OCC kandidaten</h3>
-		<div class="row">
-			<div class="col-sm-8">
-				<!-- Table view -->
-				<table class="table table-striped table-reports table-striped" >
-					<thead>
-						<tr>
-							<th class=" align-center font-size-normal"><div>Uitzendplaatsingen aangemaakt<span class="info popoverData" data-content="Uitzendplaatsingen aangemaakt" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
-							<th class=" align-center font-size-normal"><div>W&S plaatsingen aangemaakt<span class="info popoverData" data-content="W&S plaatsingen aangemaakt" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
-							<th ><div>Totaal aantal plaatsingen aangemaakt<span class="info popoverData" data-content="Totaal aantal plaatsingen aangemaakt" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td class="white" data-ng-bind="olympia.dashboard.allPlaatsingsDatumNormaalCandidates">120</td>
-							<td data-ng-bind="olympia.dashboard.allPlaatsingsDatumWervingCandidates">120</td>
-							<td data-ng-bind="olympia.dashboard.sumNormaalandWervingCandidates">60/120</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<div class="col-sm-4">
-				<!-- Graph -->
-				<div id="columnChart1"></div>
-			</div>
-		</div>
-		<hr/>
-	</div>
-</div>
-<div class="row">
-	<div class="col-sm-12">
-		<h3>Geplaatste OCC-kandidaten gecontacteerd</h3>
-		<div class="row">
-			<div class="col-sm-8">
-				<!-- Table view -->
-				<table class="table table-striped table-reports table-striped" >
-					<thead>
-						<tr>
-							<th class=" align-center font-size-normal"><div>Contactmoment na 1e week
-								<span class="info popoverData" data-content="Contactmoment na 1e week" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span>
-								</div>
-							</th>
-							<th ><div>Contactmoment na 1e maand<span class="info popoverData" data-content="Contactmoment na 1e maand" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
-							<th><div>Contactmoment na 3e maand<span class="info popoverData" data-content="Contactmoment na 3e maand" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
-							<th><div>3 maandelijks contact vanaf 6 maanden<span class="info popoverData" data-content="3 maandelijks contact vanaf 6 maanden" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td class="white" data-ng-bind="olympia.dashboard.contactMomentOneWeekNumberActual + '/' + olympia.dashboard.contactMomentOneWeekNumberTotal">60/120</td>
-							<td data-ng-bind="olympia.dashboard.contactMomentOneMaandNumberActual + '/' + olympia.dashboard.contactMomentOneMaandNumberTotal">60/120</td>
-							<td data-ng-bind="olympia.dashboard.contactMomentThreeMaandNumberActual + '/' + olympia.dashboard.contactMomentThreeMaandNumberTotal">60/120</td>
-							<td data-ng-bind="olympia.dashboard.contactVanafSixMaandenNumberActual + '/' + olympia.dashboard.contactVanafSixMaandenNumberTotal">60/120</td>
-						</tr>
-						<tr>
-							<td class="white" data-ng-bind="olympia.dashboard.contactMomentOneWeekPercent + '%'">20%</td>
-							<td data-ng-bind="olympia.dashboard.contactMomentOneMaandPercent + '%'">60%</td>
-							<td data-ng-bind="olympia.dashboard.contactMomentThreeMaandPercent + '%'">50%</td>
-							<td data-ng-bind="olympia.dashboard.contactVanafSixMaandenPercent + '%'">50%</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<div class="col-sm-4">
-				<!-- Graph -->
-				<div id="stackedChart1"></div>
 			</div>
 		</div>
 	</div>

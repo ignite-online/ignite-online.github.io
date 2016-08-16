@@ -17,11 +17,20 @@
 			'officesList' : []
 		};
 
+		this.init = init;
 	    this.getRandomMessage = getRandomMessage;
 	    this.getDashboardData = getDashboardData;
 	    this.dateParser = dateParser;
 
 	    //////////////////////////////////////////////
+
+	    function init(){
+	    	this.sendItems = {
+				'startDate' : '',
+				'endDate' : '',
+				'officesList' : []
+			};
+	    }
 
 	    function getRandomMessage(){
 	      var num = Math.floor(enumApp.RANDOMMESSAGE.length * Math.random());
@@ -134,7 +143,9 @@
 		});
 	};
 	commonService.prototype.initializeDateRange = function(ele){
-		var self = this;
+		var self = this,
+			last30Day = moment().subtract(29, 'days').toDate(),
+			today = moment().toDate();
 
 		$(ele).daterangepicker({
 			initialText: 'Selecteer periode',
@@ -181,10 +192,15 @@
 			}],
 			applyButtonText: "Toepassen",
 			applyOnMenuSelect: false,
+			onChange: callBack,
+			setRange : {
+				'start' : moment().subtract(29, 'days'),
+				'end' : moment()
+			},
 			widget : function(event, data){console.log(event, data);}
 		});
 
-		$(ele).on('change' , callBack);
+		$(ele).daterangepicker("setRange", {'start': last30Day, 'end': today});
 
 		function callBack(){
 			var dateRange = $(ele).daterangepicker("getRange"),

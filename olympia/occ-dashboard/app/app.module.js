@@ -15,6 +15,7 @@
 		'loader.module',
 		'common.module',
 		'opvolging.module',
+		'activiteiten.module',
 		'kangetallen.module'
 	]);
 })();
