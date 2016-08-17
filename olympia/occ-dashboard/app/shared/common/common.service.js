@@ -26,8 +26,8 @@
 
 	    function init(){
 	    	this.sendItems = {
-				'startDate' : '',
-				'endDate' : '',
+				'startDate' : this.sendItems.startDate.length > 0 ? this.sendItems.startDate : "",
+				'endDate' : this.sendItems.endDate.length > 0 ? this.sendItems.endDate : "",
 				'officesList' : []
 			};
 	    }
@@ -200,7 +200,17 @@
 			widget : function(event, data){console.log(event, data);}
 		});
 
-		$(ele).daterangepicker("setRange", {'start': last30Day, 'end': today});
+		if(this.sendItems.startDate.length == 0 || this.sendItems.endDate.length == 0){
+			$(ele).daterangepicker("setRange", {'start': last30Day, 'end': today});
+			callBack();
+		}
+		else{
+			$(ele).daterangepicker("setRange", 
+				{
+					'start': moment(this.sendItems.startDate, "DDMMYYYY").toDate(), 
+					'end': moment(this.sendItems.endDate, "DDMMYYYY").toDate()
+				});
+		}
 
 		function callBack(){
 			var dateRange = $(ele).daterangepicker("getRange"),
