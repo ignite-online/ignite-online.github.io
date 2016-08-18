@@ -12,6 +12,8 @@
 		vm.isKandidaten = false;
 		vm.dashboard = []; 
 
+		vm.printPage = commonService.printPage;
+
 		activate();
 
 		$scope.$on("dateRangePickerChanged", dateRangePickerChanged);

@@ -23,3 +23,10 @@ table.table-reports tr th:first-child{
 	color:#757575;
 }
 
+@media print{
+	table{
+		background-color:#f8f8f8;
+		-webkit-print-color-adjust: exact; 
+	}
+}
+

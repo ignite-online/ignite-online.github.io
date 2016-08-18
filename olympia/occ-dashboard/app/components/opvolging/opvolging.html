@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-sm-7">
+	<div class="col-xs-7">
 		<div class="form-group">
 			<select class="btn btn-default multiSelectOption" multiple="multiple">
 				<option value="1">Alle vestigingen</option>
@@ -13,16 +13,16 @@
 		</div>
 		<!-- <h2> Alle vestigingen</h2> -->
 	</div>
-	<div class="col-sm-5 text-right">
+	<div class="col-xs-5 text-right">
 		<span class="push right--1x">Laatste update 12-07-2016</span>
 		<input id="pickerToUpdate1" name="pickerToUpdate1" class="calenderRange">
 	</div>
 </div>
 <div class="row">
-	<div class="col-sm-12">
+	<div class="col-xs-12">
 		<h3>Contact na sollicitatie</h3>
 		<div class="row">
-			<div class="col-sm-8">
+			<div class="col-xs-8">
 				<!-- Table view -->
 				<div class="piechartEqualizer">
 					<table class="table table-striped table-reports table-striped space-bottom-2x" >
@@ -80,7 +80,7 @@
 					</table>
 				</div>
 			</div>
-			<div class="col-sm-4">
+			<div class="col-xs-4">
 				<!-- Graph -->
 				<div id="piechart" style="height:200px"></div>
 				<div id="piechart1" style="height:200px"></div>
@@ -90,10 +90,10 @@
 	</div>
 </div>
 <div class="row">
-	<div class="col-sm-12">
+	<div class="col-xs-12">
 		<h3>Passende (overall matchingscore) kandidaten op OCC pool-/selectiegesprek</h3>
 		<div class="row">
-			<div class="col-sm-8">
+			<div class="col-xs-8">
 				<!-- Table view -->
 				<table class="table table-striped table-reports table-striped" >
 					<thead>
@@ -117,7 +117,7 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="col-sm-4">
+			<div class="col-xs-4">
 				<!-- Graph -->
 				<div id="piechart2"></div>
 			</div>
@@ -126,16 +126,16 @@
 	</div>
 </div>
 <div class="row" data-ng-class="{'grayedOut' : !olympia.isKandidaten}">
-	<div class="col-sm-12">
+	<div class="col-xs-12">
 		<h3>Kandidaten voorstellen bij klant
 		</h3>
 		<div class="row">
-			<div class="col-sm-8 space-bottom--1x helper">
+			<div class="col-xs-8 space-bottom--1x helper">
 				Deze data wordt geladen mits geselecteerde periode minimaal 3 maanden is en de totaal geselecteerde periode minimaal 1 maand oud is vanaf laatste dataupdate. Let op! Pool-/intakegesprekken die plaatsvinden > 30 dagen nadat kandidaten met CCE hebben gesolliciteerd én/of waar vervolgactiviteiten die plaatsvinden > 3 maanden nadat het pool-/intakegesprek heeft plaatsgevonden worden niet meegenomen in deze funnel.
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-8">
+			<div class="col-xs-8">
 				<!-- Table view -->
 				<table class="table table-striped table-reports table-striped" >
 					<thead>
@@ -168,12 +168,12 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="col-sm-2">
+			<div class="col-xs-2">
 				<!-- <h5>Gesproken kandidaten geplaatst</h5> -->
 				<!-- Graph -->
 				<div id="piechart3"></div>
 			</div>
-			<div class="col-sm-2">
+			<div class="col-xs-2">
 				 <!-- <h5>Voorgestelde kandidaten geplaatst</h4> -->
 				<!-- Graph -->
 				<div id="piechart7"></div>
@@ -184,10 +184,10 @@
 </div>
 
 <div class="row">
-	<div class="col-sm-12">
+	<div class="col-xs-12">
 		<h3>Geplaatste OCC kandidaten</h3>
 		<div class="row">
-			<div class="col-sm-8">
+			<div class="col-xs-8">
 				<!-- Table view -->
 				<table class="table table-striped table-reports table-striped" >
 					<thead>
@@ -221,10 +221,16 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="col-sm-4">
+			<div class="col-xs-4">
 				<!-- Graph -->
 				<div id="stackedChart"></div>
 			</div>
 		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12 text-left">
+		<button type="submit" class="btn btn-default" data-ng-click="olympia.printPage()">Print</button>
 	</div>
 </div>
