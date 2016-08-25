@@ -170,6 +170,7 @@
 
 	opvolgingService.prototype.stackedBarChart = function(a, b){
 		return function(){
+			console.log(a, b);
 			var data = google.visualization.arrayToDataTable([
 		      ['year', 'Uitzendplaatsingen met urenbriefje', 'W&S plaatsingengefactureerd',
 		       { role: 'annotation' } ],

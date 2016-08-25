@@ -92,7 +92,7 @@
 			google.charts.setOnLoadCallback(fn);	
 	}
 	
-	commonService.prototype.drawPieChart5 = function(){
+	commonService.prototype.drawPieChart5 = function(a, b){
 		var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
           ['0-39 ‘niet passend', 2],
