@@ -23,10 +23,113 @@ table.table-reports tr th:first-child{
 	color:#757575;
 }
 
-@media print{
-	table{
-		background-color:#f8f8f8;
-		-webkit-print-color-adjust: exact; 
+@media print {
+	body{
+		-webkit-print-color-adjust:exact !important;
 	}
-}
 
+  *,
+  *:before,enter code here
+  *:after {
+    color: #000 !important;
+    text-shadow: none !important;
+    background: transparent !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+  select {
+    background: #fff !important;
+  }
+  .navbar {
+    display: none;
+  }
+  .btn > .caret,
+  .dropup > .btn > .caret {
+    border-top-color: #000 !important;
+  }
+  .label {
+    border: 1px solid #000;
+  }
+  .table {
+    border-collapse: collapse !important;
+    background-color: #f8f8f8 !important;
+  }
+  table tr th, table tr td {
+    border: 1px solid #ccc !important; }
+  table tr > th, 
+  .table tr > th{
+  	background-color:#eee !important;
+  }
+  table tr > td.white {
+    background-color: #fff !important; }
+    table thead th.align-center {
+  text-align: center; }
+  table > thead:first-child > tr:first-child > th {
+  border-top: 1px solid #ddd !important; }
+  .table > thead > tr > th{
+  	border-bottom:2px solid #ddd !important;
+  }
+  .extended-width{
+  	background-color:#fafafa !important;
+  }
+  .extended-width.border-bottom{
+  	border-bottom:1px solid #ddd !important;
+  }
+  .nav-tabs > li a{
+    color: rgba(0, 0, 0, 0.5) !important;
+    border-top: 1px solid transparent !important;
+    border-left: 1px solid #eee !important;
+  }
+  .nav-tabs > li.active{
+  	box-shadow: 0 0 1px 0 rgba(187, 187, 187, 0.6) !important;
+  }
+  .nav-tabs > li.active > a{
+    color:#000 !important;
+  	background-color:#fff !important;
+  	border:1px solid #ddd !important;
+  	border-bottom-color:transparent !important;
+  }
+  .extended-width:before, .extended-width:after{
+  	border-bottom:1px solid #ddd !important;
+  }
+}
