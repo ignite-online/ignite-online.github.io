@@ -43,7 +43,7 @@
 			commonService.chartCallBack(opvolgingService.drawPieChart(vm.dashboard.gecontacteerdPercent, vm.dashboard.nietGecontacteeredPercent));
 			commonService.chartCallBack(opvolgingService.drawPieChart1(vm.dashboard.eenWerkdagPercent, vm.dashboard.tweeWerkdagPercent, vm.dashboard.langerWerkdagPercent));
 			commonService.chartCallBack(opvolgingService.drawPieChart2(vm.dashboard.intakegesprekPlaatsgevondenPercent, vm.dashboard.verdereOpvolgingPercent));
-			commonService.chartCallBack(opvolgingService.stackedBarChart(vm.dashboard.wsPlaatsingenAangemaaktNumber, vm.dashboard.uitzendPlaatsingenAangemaaktNumber));
+			commonService.chartCallBack(opvolgingService.stackedBarChart(vm.dashboard.wsPlaatsingenGefactureerdNumber, vm.dashboard.uitzendplaatsingenMetUrenbriefjeNumber));
 
 			if(vm.isKandidaten){
 				$timeout(function(){
