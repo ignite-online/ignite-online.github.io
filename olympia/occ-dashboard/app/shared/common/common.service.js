@@ -21,6 +21,7 @@
 	    this.getRandomMessage = getRandomMessage;
 	    this.getDashboardData = getDashboardData;
 	    this.dateParser = dateParser;
+	    this.printPage = printPage;
 
 	    //////////////////////////////////////////////
 
@@ -74,6 +75,12 @@
 			}else{
 				return null;
 			}
+		}
+
+		function printPage(){
+			$timeout(function(){
+				window.print();
+			});
 		}
 	}
 

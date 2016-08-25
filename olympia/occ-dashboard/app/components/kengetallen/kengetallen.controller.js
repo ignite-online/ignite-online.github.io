@@ -9,6 +9,8 @@
 	function kengetallenCntl(kengetallenService, commonService){
 		var vm = this;
 
+		vm.printPage = commonService.printPage;
+
 		activate();
 
 		///////////////////
