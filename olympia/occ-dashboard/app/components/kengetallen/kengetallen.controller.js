@@ -36,7 +36,7 @@
 			commonService.dashboardData = data;
 			vm.dashboard = commonService.dashboardData; 
 
-			commonService.chartCallBack(commonService.drawPieChart5);
+			commonService.chartCallBack(commonService.drawPieChart5(vm.dashboard.nietPassendNumber, vm.dashboard.passendNumber, vm.dashboard.overgekWalificeerdNumber));
 			
 			loaderService.toggle(false);	
 		}

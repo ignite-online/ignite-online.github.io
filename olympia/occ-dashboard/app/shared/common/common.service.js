@@ -92,11 +92,12 @@
 			google.charts.setOnLoadCallback(fn);	
 	}
 	
-	commonService.prototype.drawPieChart5 = function(a, b){
+	commonService.prototype.drawPieChart5 = function(a, b, c){
 		var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
-          ['0-39 ‘niet passend', 2],
-          ['40-75 ‘passend’', 6],
+          ['0-39 ‘niet passend', a],
+          ['40-75 ‘passend’', b],
+          ['76-100 ‘overgekwalificeerd’', c]
         ]);
 
         var options = {
@@ -105,7 +106,7 @@
           legend : {position:'none'},
           height:'100%',
           width:'100%',
-          colors: ['#009a2d', '#dd4b39']
+          colors: ['#dd4b39','#009a2d', '#e88275']
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart5'));
