@@ -168,7 +168,7 @@
 		}	
 	}
 
-	opvolgingService.prototype.stackedBarChart = function(a, b){
+	opvolgingService.prototype.stackedBarChart = function(a, b, c){
 		return function(){
 			console.log(a, b);
 			var data = google.visualization.arrayToDataTable([
@@ -183,8 +183,15 @@
 		      legend: { position: 'top', maxLines: 3 },
 		      bar: { groupWidth: '75%' },
 		      isStacked: true,
-		      colors: ["#171580", "#cccccc",]
+		      colors: ["#171580", "#cccccc"]
 		    };
+
+		    if(c === 'disable'){
+        		options.colors = ['#ccc']
+	        }else{
+	        	options.colors = ["#171580", "#cccccc"]
+	        }
+
 		    var chart = new google.visualization.ColumnChart(document.getElementById('stackedChart'));
 		    chart.draw(data, options);	
 		}

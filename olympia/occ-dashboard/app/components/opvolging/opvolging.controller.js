@@ -43,17 +43,18 @@
 			commonService.chartCallBack(opvolgingService.drawPieChart(vm.dashboard.gecontacteerdPercent, vm.dashboard.nietGecontacteeredPercent));
 			commonService.chartCallBack(opvolgingService.drawPieChart1(vm.dashboard.eenWerkdagPercent, vm.dashboard.tweeWerkdagPercent, vm.dashboard.langerWerkdagPercent));
 			commonService.chartCallBack(opvolgingService.drawPieChart2(vm.dashboard.intakegesprekPlaatsgevondenPercent, vm.dashboard.verdereOpvolgingPercent));
-			commonService.chartCallBack(opvolgingService.stackedBarChart(vm.dashboard.wsPlaatsingenGefactureerdNumber, vm.dashboard.uitzendplaatsingenMetUrenbriefjeNumber));
-
+			
 			if(vm.isKandidaten){
 				$timeout(function(){
 					commonService.chartCallBack(opvolgingService.drawPieChart3(vm.dashboard.kandidatenGeplaatstGesprokenChart, vm.dashboard.kandidatenNietGeplaatstGesprokenChart, 'enable'));
 					commonService.chartCallBack(opvolgingService.drawPieChart7(vm.dashboard.kandidatenGeplaatstVoorgesteldeChart, vm.dashboard.kandidatenNietGeplaatstVoorgesteldeChart, 'enable'));	
+					commonService.chartCallBack(opvolgingService.stackedBarChart(vm.dashboard.wsPlaatsingenGefactureerdNumber, vm.dashboard.uitzendplaatsingenMetUrenbriefjeNumber, 'enable'));
 				});
 			}else{
 				$timeout(function(){
 					commonService.chartCallBack(opvolgingService.drawPieChart3(vm.dashboard.kandidatenGeplaatstGesprokenChart, vm.dashboard.kandidatenNietGeplaatstGesprokenChart, 'disable'));
 					commonService.chartCallBack(opvolgingService.drawPieChart7(vm.dashboard.kandidatenGeplaatstVoorgesteldeChart, vm.dashboard.kandidatenNietGeplaatstVoorgesteldeChart, 'disable'));	
+					commonService.chartCallBack(opvolgingService.stackedBarChart(vm.dashboard.wsPlaatsingenGefactureerdNumber, vm.dashboard.uitzendplaatsingenMetUrenbriefjeNumber, 'disable'));
 				});
 			}
 

@@ -127,13 +127,13 @@
 </div>
 <div class="row" data-ng-class="{'grayedOut' : !olympia.isKandidaten}">
 	<div class="col-xs-12">
-		<h3>Kandidaten voorstellen bij klant
-		</h3>
 		<div class="row">
-			<div class="col-xs-8 space-bottom--1x helper">
+			<div class="col-xs-8 helper">
 				Deze data wordt geladen mits geselecteerde periode minimaal 3 maanden is en de totaal geselecteerde periode minimaal 1 maand oud is vanaf laatste dataupdate. Let op! Pool-/intakegesprekken die plaatsvinden > 30 dagen nadat kandidaten met CCE hebben gesolliciteerd én/of waar vervolgactiviteiten die plaatsvinden > 3 maanden nadat het pool-/intakegesprek heeft plaatsgevonden worden niet meegenomen in deze funnel.
 			</div>
 		</div>
+		<h3>Kandidaten voorstellen bij klant
+		</h3>
 		<div class="row">
 			<div class="col-xs-8">
 				<!-- Table view -->
@@ -183,7 +183,7 @@
 	</div>
 </div>
 
-<div class="row">
+<div class="row" data-ng-class="{'grayedOut' : !olympia.isKandidaten}">
 	<div class="col-xs-12">
 		<h3>Geplaatste OCC kandidaten</h3>
 		<div class="row">
