@@ -35,7 +35,8 @@ module.exports = function() {
             assets + '/libs/moment.min.js',
             assets + '/libs/bootstrap-datetimepicker.min.js',
             assets + '/libs/jquery.comiseo.daterangepicker.js',
-            assets + '/libs/select2.full.min.js'
+            assets + '/libs/select2.full.min.js',
+            assets + '/libs/angular-cookies.min.js'
         ],
         allLibCss : [
             assets + '/libs/*.css'

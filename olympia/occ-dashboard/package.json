@@ -17,6 +17,7 @@
     "morgan": "^1.5.1"
   },
   "devDependencies": {
+    "angular-cookies": "^1.5.8",
     "bower": "^1.7.0",
     "debug": "^2.1.1",
     "del": "^1.1.1",

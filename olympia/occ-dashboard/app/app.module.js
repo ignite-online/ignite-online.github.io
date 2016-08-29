@@ -11,6 +11,7 @@
 	angular.module('olympia-app', [
 		//Third party dependencies
 		'ui.router',
+		'ngCookies',
 		//Application
 		'loader.module',
 		'common.module',
